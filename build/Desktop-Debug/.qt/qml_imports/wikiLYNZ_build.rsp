@@ -1,9 +1,0 @@
--rootPath
-/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ
--cmake-output
--output-file
-/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/.qt/qml_imports/wikiLYNZ_build.cmake
--importPath
-/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug
--importPath
-/usr/lib/qt6/qml
