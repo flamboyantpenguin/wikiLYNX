@@ -76,10 +76,19 @@ wikiLYNZ_autogen/timestamp: CMakeFiles/wikiLYNZ.dir/compiler_depend.ts
 	/usr/bin/cmake -E cmake_autogen /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles/wikiLYNZ_autogen.dir/AutogenInfo.json Debug
 	/usr/bin/cmake -E touch /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/timestamp
 
+wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp: /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/assets.qrc
+wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp: CMakeFiles/wikiLYNZ_autogen.dir/AutoRcc_assets_EWIEGA46WW_Info.json
+wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp: /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/assets/images/rset-logo-menu.png
+wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp: /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/gameData.json
+wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp: /usr/lib/qt6/rcc
+wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp: /usr/lib/qt6/rcc
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Automatic RCC for assets.qrc"
+	/usr/bin/cmake -E cmake_autorcc /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles/wikiLYNZ_autogen.dir/AutoRcc_assets_EWIEGA46WW_Info.json Debug
+
 CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o: CMakeFiles/wikiLYNZ.dir/flags.make
 CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o: wikiLYNZ_autogen/mocs_compilation.cpp
 CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o: CMakeFiles/wikiLYNZ.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o"
 	/usr/bin/x86_64-pc-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o -MF CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o.d -o CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o -c /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/mocs_compilation.cpp
 
 CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.i: cmake_force
@@ -93,7 +102,7 @@ CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.s: cmake_force
 CMakeFiles/wikiLYNZ.dir/main.cpp.o: CMakeFiles/wikiLYNZ.dir/flags.make
 CMakeFiles/wikiLYNZ.dir/main.cpp.o: /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/main.cpp
 CMakeFiles/wikiLYNZ.dir/main.cpp.o: CMakeFiles/wikiLYNZ.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/wikiLYNZ.dir/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/wikiLYNZ.dir/main.cpp.o"
 	/usr/bin/x86_64-pc-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wikiLYNZ.dir/main.cpp.o -MF CMakeFiles/wikiLYNZ.dir/main.cpp.o.d -o CMakeFiles/wikiLYNZ.dir/main.cpp.o -c /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/main.cpp
 
 CMakeFiles/wikiLYNZ.dir/main.cpp.i: cmake_force
@@ -107,7 +116,7 @@ CMakeFiles/wikiLYNZ.dir/main.cpp.s: cmake_force
 CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o: CMakeFiles/wikiLYNZ.dir/flags.make
 CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o: /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/mainwindow.cpp
 CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o: CMakeFiles/wikiLYNZ.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o"
 	/usr/bin/x86_64-pc-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o -MF CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o.d -o CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o -c /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/mainwindow.cpp
 
 CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.i: cmake_force
@@ -118,11 +127,41 @@ CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.s"
 	/usr/bin/x86_64-pc-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/mainwindow.cpp -o CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.s
 
+CMakeFiles/wikiLYNZ.dir/welcome.cpp.o: CMakeFiles/wikiLYNZ.dir/flags.make
+CMakeFiles/wikiLYNZ.dir/welcome.cpp.o: /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/welcome.cpp
+CMakeFiles/wikiLYNZ.dir/welcome.cpp.o: CMakeFiles/wikiLYNZ.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/wikiLYNZ.dir/welcome.cpp.o"
+	/usr/bin/x86_64-pc-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wikiLYNZ.dir/welcome.cpp.o -MF CMakeFiles/wikiLYNZ.dir/welcome.cpp.o.d -o CMakeFiles/wikiLYNZ.dir/welcome.cpp.o -c /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/welcome.cpp
+
+CMakeFiles/wikiLYNZ.dir/welcome.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wikiLYNZ.dir/welcome.cpp.i"
+	/usr/bin/x86_64-pc-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/welcome.cpp > CMakeFiles/wikiLYNZ.dir/welcome.cpp.i
+
+CMakeFiles/wikiLYNZ.dir/welcome.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wikiLYNZ.dir/welcome.cpp.s"
+	/usr/bin/x86_64-pc-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/welcome.cpp -o CMakeFiles/wikiLYNZ.dir/welcome.cpp.s
+
+CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o: CMakeFiles/wikiLYNZ.dir/flags.make
+CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o: wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp
+CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o: CMakeFiles/wikiLYNZ.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o"
+	/usr/bin/x86_64-pc-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o -MF CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o.d -o CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o -c /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp
+
+CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.i"
+	/usr/bin/x86_64-pc-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp > CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.i
+
+CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.s"
+	/usr/bin/x86_64-pc-linux-gnu-g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp -o CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.s
+
 # Object files for target wikiLYNZ
 wikiLYNZ_OBJECTS = \
 "CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o" \
 "CMakeFiles/wikiLYNZ.dir/main.cpp.o" \
-"CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o"
+"CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o" \
+"CMakeFiles/wikiLYNZ.dir/welcome.cpp.o" \
+"CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o"
 
 # External object files for target wikiLYNZ
 wikiLYNZ_EXTERNAL_OBJECTS =
@@ -130,6 +169,8 @@ wikiLYNZ_EXTERNAL_OBJECTS =
 wikiLYNZ: CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o
 wikiLYNZ: CMakeFiles/wikiLYNZ.dir/main.cpp.o
 wikiLYNZ: CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o
+wikiLYNZ: CMakeFiles/wikiLYNZ.dir/welcome.cpp.o
+wikiLYNZ: CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o
 wikiLYNZ: CMakeFiles/wikiLYNZ.dir/build.make
 wikiLYNZ: /usr/lib/libQt6WebEngineWidgets.so.6.7.2
 wikiLYNZ: /usr/lib/libQt6WebEngineCore.so.6.7.2
@@ -148,7 +189,7 @@ wikiLYNZ: /usr/lib/libQt6Core.so.6.7.2
 wikiLYNZ: /usr/lib/libGLX.so
 wikiLYNZ: /usr/lib/libOpenGL.so
 wikiLYNZ: CMakeFiles/wikiLYNZ.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable wikiLYNZ"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable wikiLYNZ"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/wikiLYNZ.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -159,6 +200,7 @@ CMakeFiles/wikiLYNZ.dir/clean:
 	$(CMAKE_COMMAND) -P CMakeFiles/wikiLYNZ.dir/cmake_clean.cmake
 .PHONY : CMakeFiles/wikiLYNZ.dir/clean
 
+CMakeFiles/wikiLYNZ.dir/depend: wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp
 CMakeFiles/wikiLYNZ.dir/depend: wikiLYNZ_autogen/timestamp
 	cd /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/CMakeFiles/wikiLYNZ.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/wikiLYNZ.dir/depend

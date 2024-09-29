@@ -33,11 +33,8 @@ public:
     QLabel *clock;
     QLabel *counter;
     QProgressBar *progressBar;
-    QPushButton *pushButton_6;
-    QPushButton *pushButton_5;
-    QPushButton *pushButton_4;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton;
+    QPushButton *showHistory;
+    QPushButton *exitButton;
     QWebEngineView *field;
     QMenuBar *menubar;
     QStatusBar *statusbar;
@@ -72,11 +69,12 @@ public:
         sizePolicy1.setHeightForWidth(clock->sizePolicy().hasHeightForWidth());
         clock->setSizePolicy(sizePolicy1);
         QFont font;
-        font.setFamilies({QString::fromUtf8("Monospace")});
+        font.setFamilies({QString::fromUtf8("Courier Prime")});
         font.setPointSize(12);
-        font.setBold(true);
+        font.setBold(false);
         clock->setFont(font);
         clock->setTextFormat(Qt::TextFormat::AutoText);
+        clock->setTextInteractionFlags(Qt::TextInteractionFlag::NoTextInteraction);
 
         verticalLayout->addWidget(clock);
 
@@ -84,6 +82,12 @@ public:
         counter->setObjectName("counter");
         sizePolicy1.setHeightForWidth(counter->sizePolicy().hasHeightForWidth());
         counter->setSizePolicy(sizePolicy1);
+        QFont font1;
+        font1.setFamilies({QString::fromUtf8("Courier Prime")});
+        font1.setPointSize(12);
+        font1.setBold(true);
+        counter->setFont(font1);
+        counter->setTextInteractionFlags(Qt::TextInteractionFlag::NoTextInteraction);
 
         verticalLayout->addWidget(counter);
 
@@ -98,40 +102,19 @@ public:
 
         verticalLayout->addWidget(progressBar);
 
-        pushButton_6 = new QPushButton(centralwidget);
-        pushButton_6->setObjectName("pushButton_6");
-        sizePolicy1.setHeightForWidth(pushButton_6->sizePolicy().hasHeightForWidth());
-        pushButton_6->setSizePolicy(sizePolicy1);
+        showHistory = new QPushButton(centralwidget);
+        showHistory->setObjectName("showHistory");
+        sizePolicy1.setHeightForWidth(showHistory->sizePolicy().hasHeightForWidth());
+        showHistory->setSizePolicy(sizePolicy1);
 
-        verticalLayout->addWidget(pushButton_6);
+        verticalLayout->addWidget(showHistory);
 
-        pushButton_5 = new QPushButton(centralwidget);
-        pushButton_5->setObjectName("pushButton_5");
-        sizePolicy1.setHeightForWidth(pushButton_5->sizePolicy().hasHeightForWidth());
-        pushButton_5->setSizePolicy(sizePolicy1);
+        exitButton = new QPushButton(centralwidget);
+        exitButton->setObjectName("exitButton");
+        sizePolicy1.setHeightForWidth(exitButton->sizePolicy().hasHeightForWidth());
+        exitButton->setSizePolicy(sizePolicy1);
 
-        verticalLayout->addWidget(pushButton_5);
-
-        pushButton_4 = new QPushButton(centralwidget);
-        pushButton_4->setObjectName("pushButton_4");
-        sizePolicy1.setHeightForWidth(pushButton_4->sizePolicy().hasHeightForWidth());
-        pushButton_4->setSizePolicy(sizePolicy1);
-
-        verticalLayout->addWidget(pushButton_4);
-
-        pushButton_3 = new QPushButton(centralwidget);
-        pushButton_3->setObjectName("pushButton_3");
-        sizePolicy1.setHeightForWidth(pushButton_3->sizePolicy().hasHeightForWidth());
-        pushButton_3->setSizePolicy(sizePolicy1);
-
-        verticalLayout->addWidget(pushButton_3);
-
-        pushButton = new QPushButton(centralwidget);
-        pushButton->setObjectName("pushButton");
-        sizePolicy1.setHeightForWidth(pushButton->sizePolicy().hasHeightForWidth());
-        pushButton->setSizePolicy(sizePolicy1);
-
-        verticalLayout->addWidget(pushButton);
+        verticalLayout->addWidget(exitButton);
 
 
         horizontalLayout->addLayout(verticalLayout);
@@ -163,17 +146,14 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "wikiLYNX", nullptr));
 #if QT_CONFIG(whatsthis)
         clock->setWhatsThis(QCoreApplication::translate("MainWindow", "Current System Time", nullptr));
 #endif // QT_CONFIG(whatsthis)
         clock->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         counter->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
-        pushButton_6->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton_5->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton_4->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton_3->setText(QCoreApplication::translate("MainWindow", "PushButton", nullptr));
-        pushButton->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
+        showHistory->setText(QCoreApplication::translate("MainWindow", "History", nullptr));
+        exitButton->setText(QCoreApplication::translate("MainWindow", "Exit", nullptr));
     } // retranslateUi
 
 };

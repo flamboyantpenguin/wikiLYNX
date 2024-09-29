@@ -261,6 +261,54 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/wikiLYNZ.dir/build.make CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+welcome.o: welcome.cpp.o
+.PHONY : welcome.o
+
+# target to build an object file
+welcome.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wikiLYNZ.dir/build.make CMakeFiles/wikiLYNZ.dir/welcome.cpp.o
+.PHONY : welcome.cpp.o
+
+welcome.i: welcome.cpp.i
+.PHONY : welcome.i
+
+# target to preprocess a source file
+welcome.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wikiLYNZ.dir/build.make CMakeFiles/wikiLYNZ.dir/welcome.cpp.i
+.PHONY : welcome.cpp.i
+
+welcome.s: welcome.cpp.s
+.PHONY : welcome.s
+
+# target to generate assembly for a file
+welcome.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wikiLYNZ.dir/build.make CMakeFiles/wikiLYNZ.dir/welcome.cpp.s
+.PHONY : welcome.cpp.s
+
+wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.o: wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o
+.PHONY : wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.o
+
+# target to build an object file
+wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wikiLYNZ.dir/build.make CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o
+.PHONY : wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o
+
+wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.i: wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.i
+.PHONY : wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.i
+
+# target to preprocess a source file
+wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wikiLYNZ.dir/build.make CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.i
+.PHONY : wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.i
+
+wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.s: wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.s
+.PHONY : wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.s
+
+# target to generate assembly for a file
+wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wikiLYNZ.dir/build.make CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.s
+.PHONY : wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.s
+
 wikiLYNZ_autogen/mocs_compilation.o: wikiLYNZ_autogen/mocs_compilation.cpp.o
 .PHONY : wikiLYNZ_autogen/mocs_compilation.o
 
@@ -307,6 +355,12 @@ help:
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... welcome.o"
+	@echo "... welcome.i"
+	@echo "... welcome.s"
+	@echo "... wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.o"
+	@echo "... wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.i"
+	@echo "... wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.s"
 	@echo "... wikiLYNZ_autogen/mocs_compilation.o"
 	@echo "... wikiLYNZ_autogen/mocs_compilation.i"
 	@echo "... wikiLYNZ_autogen/mocs_compilation.s"

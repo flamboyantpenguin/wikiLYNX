@@ -1,0 +1,63 @@
+{"info" : {
+      "levels": 3},
+  "meow?": "meow!!!",
+ "data" : {
+     "meow" : {
+         "checkpoints": 6,
+         "data": {
+             "0": {
+                 "url": "https://en.wikipedia.org/wiki/Paper"
+             },
+             "1": {
+                 "url": "https://en.wikipedia.org/wiki/Pencil"
+             },
+             "2": {
+                 "url": ""
+             },
+             "3": {
+                 "url": ""
+             },
+             "4": {
+                 "url": ""
+             },
+             "5": {
+                 "url": ""
+             }
+         }
+     },
+     "rocketman" : {
+         "checkpoints": 6,
+         "data": {
+             "0": {
+                 "url": "https://en.wikipedia.org/wiki/Pencil"
+             },
+             "1": {
+                 "url": ""
+             },
+             "2": {
+                 "url": ""
+             },
+             "3": {
+                 "url": ""
+             },
+             "4": {
+                 "url": ""
+             },
+             "5": {
+                 "url": ""
+             }
+         }
+     },
+     "debug" : {
+         "checkpoints": 2,
+         "data": {
+             "0": {
+                 "url": "https://en.wikipedia.org/wiki/Pencil"
+             },
+             "1": {
+                 "url": "https://en.wikipedia.org/wiki/Paper"
+             }
+         }
+     }
+  }
+ }

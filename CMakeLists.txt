@@ -24,6 +24,9 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         welcome.ui
+        welcome.h welcome.cpp
+        assets.qrc
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET wikiLYNZ APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -49,7 +52,7 @@ target_link_libraries(wikiLYNZ PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt::WebEng
 # If you are developing for iOS or macOS you should consider setting an
 # explicit, fixed bundle identifier manually though.
 if(${QT_VERSION} VERSION_LESS 6.1.0)
-  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.example.wikiLYNZ)
+  set(BUNDLE_ID_OPTION MACOSX_BUNDLE_GUI_IDENTIFIER com.dawn.wikiLYNZ)
 endif()
 set_target_properties(wikiLYNZ PROPERTIES
     ${BUNDLE_ID_OPTION}

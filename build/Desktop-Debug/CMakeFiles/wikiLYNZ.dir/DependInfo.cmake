@@ -11,6 +11,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "" "wikiLYNZ_autogen/timestamp" "custom" "wikiLYNZ_autogen/deps"
   "/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/main.cpp" "CMakeFiles/wikiLYNZ.dir/main.cpp.o" "gcc" "CMakeFiles/wikiLYNZ.dir/main.cpp.o.d"
   "/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/mainwindow.cpp" "CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o" "gcc" "CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o.d"
+  "/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/welcome.cpp" "CMakeFiles/wikiLYNZ.dir/welcome.cpp.o" "gcc" "CMakeFiles/wikiLYNZ.dir/welcome.cpp.o.d"
+  "/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp" "CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o" "gcc" "CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o.d"
   "/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/mocs_compilation.cpp" "CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o" "gcc" "CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o.d"
   )
 
