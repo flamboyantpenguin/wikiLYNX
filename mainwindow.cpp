@@ -1,9 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-//#include <QString>
-//#include <QDateTime>
-//#include <QStringView>
 
 namespace fs = std::filesystem;
 

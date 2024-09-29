@@ -2,75 +2,95 @@
       "levels": 3},
   "meow?": "meow!!!",
  "data" : {
-     "blisteringbarnacles" : {
-         "checkpoints": 6,
+     "fraidycat" : {
+         "checkpoints": 5,
          "time": 600,
          "data": {
              "0": {
-                 "url": "https://en.wikipedia.org/wiki/Paper"
+                 "url": "https://en.wikipedia.org/wiki/7_Up",
+                 "name": "7 UP"
              },
              "1": {
-                 "url": "https://en.wikipedia.org/wiki/Pencil"
+                 "url": "https://en.wikipedia.org/wiki/United_States",
+                 "name": "United States"
              },
              "2": {
-                 "url": ""
+                 "url": "https://en.wikipedia.org/wiki/Federal_government_of_the_United_States",
+                 "name": "Federal Goverment of the United States"
              },
              "3": {
-                 "url": ""
+                 "url": "https://en.wikipedia.org/wiki/President_of_the_United_States",
+                 "name": "President of the United States"
              },
              "4": {
-                 "url": ""
+                 "url": "https://en.wikipedia.org/wiki/Joe_Biden",
+                 "name": "Joe Biden"
+             }
+         }
+     },
+     "blisteringbarnacles" : {
+         "checkpoints": 4,
+         "time": 600,
+         "data": {
+             "0": {
+                 "url": "https://en.wikipedia.org/wiki/Shah_Rukh_Khan",
+                 "name": "Shah_Rukh_Khan"
              },
-             "5": {
-                 "url": ""
+             "1": {
+                 "url": "https://en.wikipedia.org/wiki/Taj_Mahal",
+                 "name": "Taj_Mahal"
+             },
+             "2": {
+                 "url": "https://en.wikipedia.org/wiki/Roman_Empire",
+                 "name": "Roman_Empire"
+             },
+             "3": {
+                 "url": "https://en.wikipedia.org/wiki/Solar_System",
+                 "name": "Solar_System"
              }
          }
      },
      "cattomosfet!" : {
-         "checkpoints": 6,
+         "checkpoints": 5,
          "time": 900,
          "data": {
              "0": {
-                 "url": "https://en.wikipedia.org/wiki/Pencil"
+                 "url": "https://en.wikipedia.org/wiki/Paper",
+                 "name": "Paper"
              },
              "1": {
-                 "url": ""
+                 "url": "https://en.wikipedia.org/wiki/Pollution",
+                 "name": "Pollution"
              },
              "2": {
-                 "url": ""
+                 "url": "https://en.wikipedia.org/wiki/Snow_White_and_the_Seven_Dwarfs_(1937_film)",
+                 "name": "Snow_White_and_the_Seven_Dwarfs_(1937_film)"
              },
              "3": {
-                 "url": ""
+                 "url": "https://en.wikipedia.org/wiki/Isaac_Newton",
+                 "name": "Sir Isaac Newton"
              },
              "4": {
-                 "url": ""
-             },
-             "5": {
-                 "url": ""
+                 "url": "https://en.wikipedia.org/wiki/Diode",
+                 "name": "Diode"
              }
          }
      },
      "greenapple" : {
-         "checkpoints": 6,
+         "checkpoints": 3,
          "time": 720,
          "data": {
              "0": {
-                 "url": "https://en.wikipedia.org/wiki/Pencil"
+                 "url": "https://en.wikipedia.org/wiki/Nintendo",
+                 "name": "Nintendo"
              },
              "1": {
-                 "url": ""
+                 "url": "https://en.wikipedia.org/wiki/ARCH_Motorcycle",
+                 "name": "ARCH_Motorcycle"
              },
              "2": {
-                 "url": ""
-             },
-             "3": {
-                 "url": ""
-             },
-             "4": {
-                 "url": ""
-             },
-             "5": {
-                 "url": ""
+                 "url": "https://en.wikipedia.org/wiki/Rajagiri_School_of_Engineering_%26_Technology_(Autonomous)",
+                 "name": "RSET"
              }
          }
      },
@@ -79,10 +99,12 @@
          "time": 10,
          "data": {
              "0": {
-                 "url": "https://en.wikipedia.org/wiki/Pencil"
+                 "url": "https://en.wikipedia.org/wiki/Pencil",
+                 "name": "Pencil"
              },
              "1": {
-                 "url": "https://en.wikipedia.org/wiki/Paper"
+                 "url": "https://en.wikipedia.org/wiki/Paper",
+                 "name": "Paper"
              }
          }
      }

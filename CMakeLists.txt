@@ -12,6 +12,12 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets WebEngineWidgets)
 
+if (MSVC)
+    find_package(jsoncpp CONFIG REQUIRED)
+    set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/assets/logo.rc")
+    #qt_add_executable(photosurfaceexample main.cpp ${app_icon_resource_windows})
+endif (MSVC)
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -23,6 +29,7 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(wikiLYNX
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
+        ${app_icon_resource_windows}
         welcome.ui
         welcome.h welcome.cpp
         assets.qrc
@@ -47,7 +54,10 @@ else()
     endif()
 endif()
 
-target_link_libraries(wikiLYNX PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt::WebEngineWidgets)
+
+target_link_libraries(wikiLYNX PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt::WebEngineWidgets jsoncpp_lib)
+
+
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.
 # If you are developing for iOS or macOS you should consider setting an
@@ -73,3 +83,5 @@ install(TARGETS wikiLYNX
 if(QT_VERSION_MAJOR EQUAL 6)
     qt_finalize_executable(wikiLYNX)
 endif()
+
+

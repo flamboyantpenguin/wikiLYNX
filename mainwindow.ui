@@ -37,12 +37,12 @@
    </property>
    <layout class="QHBoxLayout" name="horizontalLayout">
     <property name="sizeConstraint">
-     <enum>QLayout::SizeConstraint::SetMaximumSize</enum>
+     <enum>QLayout::SetDefaultConstraint</enum>
     </property>
     <item>
      <layout class="QVBoxLayout" name="verticalLayout">
       <property name="sizeConstraint">
-       <enum>QLayout::SizeConstraint::SetFixedSize</enum>
+       <enum>QLayout::SetDefaultConstraint</enum>
       </property>
       <item>
        <widget class="QLabel" name="clock">
@@ -66,10 +66,10 @@
          <string>TextLabel</string>
         </property>
         <property name="textFormat">
-         <enum>Qt::TextFormat::AutoText</enum>
+         <enum>Qt::PlainText</enum>
         </property>
         <property name="textInteractionFlags">
-         <set>Qt::TextInteractionFlag::NoTextInteraction</set>
+         <set>Qt::NoTextInteraction</set>
         </property>
        </widget>
       </item>
@@ -92,7 +92,7 @@
          <string>TextLabel</string>
         </property>
         <property name="textInteractionFlags">
-         <set>Qt::TextInteractionFlag::NoTextInteraction</set>
+         <set>Qt::NoTextInteraction</set>
         </property>
        </widget>
       </item>
@@ -106,6 +106,13 @@
         </property>
         <property name="value">
          <number>24</number>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="viewCheckPointButton">
+        <property name="text">
+         <string>Checkpoints</string>
         </property>
        </widget>
       </item>
@@ -138,14 +145,14 @@
      </layout>
     </item>
     <item>
-     <widget class="QWebEngineView" name="field">
+     <widget class="QWebEngineView" name="field" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
         <horstretch>0</horstretch>
         <verstretch>0</verstretch>
        </sizepolicy>
       </property>
-      <property name="url">
+      <property name="url" stdset="0">
        <url>
         <string>https://www.wikipedia.org/</string>
        </url>
@@ -160,7 +167,7 @@
      <x>0</x>
      <y>0</y>
      <width>1010</width>
-     <height>23</height>
+     <height>21</height>
     </rect>
    </property>
   </widget>
