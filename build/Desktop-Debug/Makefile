@@ -261,6 +261,30 @@ mainwindow.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/wikiLYNZ.dir/build.make CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.s
 .PHONY : mainwindow.cpp.s
 
+viewhistory.o: viewhistory.cpp.o
+.PHONY : viewhistory.o
+
+# target to build an object file
+viewhistory.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wikiLYNZ.dir/build.make CMakeFiles/wikiLYNZ.dir/viewhistory.cpp.o
+.PHONY : viewhistory.cpp.o
+
+viewhistory.i: viewhistory.cpp.i
+.PHONY : viewhistory.i
+
+# target to preprocess a source file
+viewhistory.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wikiLYNZ.dir/build.make CMakeFiles/wikiLYNZ.dir/viewhistory.cpp.i
+.PHONY : viewhistory.cpp.i
+
+viewhistory.s: viewhistory.cpp.s
+.PHONY : viewhistory.s
+
+# target to generate assembly for a file
+viewhistory.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/wikiLYNZ.dir/build.make CMakeFiles/wikiLYNZ.dir/viewhistory.cpp.s
+.PHONY : viewhistory.cpp.s
+
 welcome.o: welcome.cpp.o
 .PHONY : welcome.o
 
@@ -355,6 +379,9 @@ help:
 	@echo "... mainwindow.o"
 	@echo "... mainwindow.i"
 	@echo "... mainwindow.s"
+	@echo "... viewhistory.o"
+	@echo "... viewhistory.i"
+	@echo "... viewhistory.s"
 	@echo "... welcome.o"
 	@echo "... welcome.i"
 	@echo "... welcome.s"

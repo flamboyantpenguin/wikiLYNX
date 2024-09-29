@@ -1,5 +1,6 @@
 /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/EWIEGA46WW/moc_mainwindow.cpp: /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/mainwindow.h \
   /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/moc_predefs.h \
+  /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/viewhistory.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
   /usr/include/asm-generic/errno.h \
@@ -272,6 +273,7 @@
   /usr/include/locale.h \
   /usr/include/pthread.h \
   /usr/include/qt6/QtCore/QDebug \
+  /usr/include/qt6/QtCore/QFile \
   /usr/include/qt6/QtCore/QJsonObject \
   /usr/include/qt6/QtCore/QThread \
   /usr/include/qt6/QtCore/QTimer \
@@ -316,6 +318,8 @@
   /usr/include/qt6/QtCore/qelapsedtimer.h \
   /usr/include/qt6/QtCore/qendian.h \
   /usr/include/qt6/QtCore/qexceptionhandling.h \
+  /usr/include/qt6/QtCore/qfile.h \
+  /usr/include/qt6/QtCore/qfiledevice.h \
   /usr/include/qt6/QtCore/qflags.h \
   /usr/include/qt6/QtCore/qfloat16.h \
   /usr/include/qt6/QtCore/qforeach.h \
@@ -326,6 +330,7 @@
   /usr/include/qt6/QtCore/qglobalstatic.h \
   /usr/include/qt6/QtCore/qhash.h \
   /usr/include/qt6/QtCore/qhashfunctions.h \
+  /usr/include/qt6/QtCore/qiodevice.h \
   /usr/include/qt6/QtCore/qiodevicebase.h \
   /usr/include/qt6/QtCore/qiterable.h \
   /usr/include/qt6/QtCore/qiterator.h \
@@ -431,6 +436,7 @@
   /usr/include/qt6/QtGui/qtguiglobal.h \
   /usr/include/qt6/QtGui/qtransform.h \
   /usr/include/qt6/QtGui/qwindowdefs.h \
+  /usr/include/qt6/QtWidgets/QDialog \
   /usr/include/qt6/QtWidgets/QMainWindow \
   /usr/include/qt6/QtWidgets/QMessageBox \
   /usr/include/qt6/QtWidgets/qdialog.h \

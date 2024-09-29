@@ -6,6 +6,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/wikiLYNZ.dir/main.cpp.o.d"
   "CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o"
   "CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o.d"
+  "CMakeFiles/wikiLYNZ.dir/viewhistory.cpp.o"
+  "CMakeFiles/wikiLYNZ.dir/viewhistory.cpp.o.d"
   "CMakeFiles/wikiLYNZ.dir/welcome.cpp.o"
   "CMakeFiles/wikiLYNZ.dir/welcome.cpp.o.d"
   "CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/EWIEGA46WW/qrc_assets.cpp.o"

@@ -1152,6 +1152,12 @@
 			null
 		],
 		[
+			"/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/viewhistory.h",
+			"MU",
+			"EWIEGA46WW/moc_viewhistory.cpp",
+			null
+		],
+		[
 			"/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/welcome.h",
 			"MU",
 			"EWIEGA46WW/moc_welcome.cpp",
@@ -1253,6 +1259,11 @@
 		],
 		[
 			"/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/mainwindow.cpp",
+			"MU",
+			null
+		],
+		[
+			"/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/viewhistory.cpp",
 			"MU",
 			null
 		],

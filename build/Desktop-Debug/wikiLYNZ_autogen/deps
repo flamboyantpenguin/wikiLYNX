@@ -9,6 +9,8 @@ wikiLYNZ_autogen/timestamp: \
 	/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/main.cpp \
 	/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/mainwindow.cpp \
 	/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/mainwindow.h \
+	/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/viewhistory.cpp \
+	/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/viewhistory.h \
 	/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/welcome.cpp \
 	/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/welcome.h \
 	/usr/include/alloca.h \
@@ -457,6 +459,7 @@ wikiLYNZ_autogen/timestamp: \
 	/usr/include/qt6/QtGui/qtguiglobal.h \
 	/usr/include/qt6/QtGui/qtransform.h \
 	/usr/include/qt6/QtGui/qwindowdefs.h \
+	/usr/include/qt6/QtWidgets/QDialog \
 	/usr/include/qt6/QtWidgets/QMainWindow \
 	/usr/include/qt6/QtWidgets/QMessageBox \
 	/usr/include/qt6/QtWidgets/qdialog.h \
@@ -1301,5 +1304,6 @@ wikiLYNZ_autogen/timestamp: \
 	/usr/share/cmake/Modules/Platform/Linux.cmake \
 	/usr/share/cmake/Modules/Platform/UnixPaths.cmake \
 	/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/mainwindow.ui \
+	/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/viewhistory.ui \
 	/home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/welcome.ui \
 	/usr/bin/cmake

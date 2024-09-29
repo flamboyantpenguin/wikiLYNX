@@ -375,7 +375,11 @@ CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o: \
  /usr/include/c++/14.2.1/bits/unique_lock.h \
  /usr/include/c++/14.2.1/condition_variable \
  /usr/include/c++/14.2.1/bits/atomic_futex.h \
- /usr/include/c++/14.2.1/bits/std_thread.h \
+ /usr/include/c++/14.2.1/bits/std_thread.h /usr/include/qt6/QtCore/QFile \
+ /usr/include/qt6/QtCore/qfile.h /usr/include/qt6/QtCore/qfiledevice.h \
+ /usr/include/qt6/QtCore/qiodevice.h \
+ /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/viewhistory.h \
+ /usr/include/qt6/QtWidgets/QDialog /usr/include/qt6/QtWidgets/qdialog.h \
  /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/include/./ui_mainwindow.h \
  /usr/include/qt6/QtCore/QVariant /usr/include/qt6/QtCore/qvariant.h \
  /usr/include/qt6/QtWebEngineWidgets/QWebEngineView \
@@ -415,7 +419,6 @@ CMakeFiles/wikiLYNZ.dir/mainwindow.cpp.o: \
  /usr/include/qt6/QtWidgets/qgridlayout.h \
  /usr/include/qt6/QtWidgets/QLabel /usr/include/qt6/QtWidgets/qlabel.h \
  /usr/include/qt6/QtWidgets/qframe.h /usr/include/qt6/QtGui/qpicture.h \
- /usr/include/qt6/QtCore/qiodevice.h \
  /usr/include/qt6/QtGui/qtextdocument.h \
  /usr/include/qt6/QtWidgets/QMainWindow \
  /usr/include/qt6/QtWidgets/QMenuBar \

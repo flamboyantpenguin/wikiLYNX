@@ -376,8 +376,14 @@ CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o: \
  /usr/include/c++/14.2.1/bits/unique_lock.h \
  /usr/include/c++/14.2.1/condition_variable \
  /usr/include/c++/14.2.1/bits/atomic_futex.h \
- /usr/include/c++/14.2.1/bits/std_thread.h \
+ /usr/include/c++/14.2.1/bits/std_thread.h /usr/include/qt6/QtCore/QFile \
+ /usr/include/qt6/QtCore/qfile.h /usr/include/qt6/QtCore/qfiledevice.h \
+ /usr/include/qt6/QtCore/qiodevice.h \
+ /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/EWIEGA46WW/../../../../viewhistory.h \
+ /usr/include/qt6/QtWidgets/QDialog /usr/include/qt6/QtWidgets/qdialog.h \
  /usr/include/qt6/QtCore/qtmochelpers.h \
+ /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/EWIEGA46WW/moc_viewhistory.cpp \
+ /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/EWIEGA46WW/../../../../viewhistory.h \
  /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/EWIEGA46WW/moc_welcome.cpp \
  /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/EWIEGA46WW/../../../../welcome.h \
  /home/penguin/Documents/Projects/wikiLYNXBrowser/wikiLYNZ/build/Desktop-Debug/wikiLYNZ_autogen/include/ui_welcome.h \
@@ -392,11 +398,9 @@ CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o: \
  /usr/include/qt6/QtGui/qguiapplication.h \
  /usr/include/qt6/QtGui/qinputmethod.h \
  /usr/include/qt6/QtGui/qguiapplication_platform.h \
- /usr/include/qt6/QtWidgets/QDialog /usr/include/qt6/QtWidgets/qdialog.h \
- /usr/include/qt6/QtWidgets/QLabel /usr/include/qt6/QtWidgets/qlabel.h \
- /usr/include/qt6/QtWidgets/qframe.h /usr/include/qt6/QtGui/qpicture.h \
- /usr/include/qt6/QtCore/qiodevice.h \
- /usr/include/qt6/QtGui/qtextdocument.h \
+ /usr/include/qt6/QtWidgets/QDialog /usr/include/qt6/QtWidgets/QLabel \
+ /usr/include/qt6/QtWidgets/qlabel.h /usr/include/qt6/QtWidgets/qframe.h \
+ /usr/include/qt6/QtGui/qpicture.h /usr/include/qt6/QtGui/qtextdocument.h \
  /usr/include/qt6/QtWidgets/QLineEdit \
  /usr/include/qt6/QtWidgets/qlineedit.h \
  /usr/include/qt6/QtGui/qtextcursor.h \
@@ -413,6 +417,5 @@ CMakeFiles/wikiLYNZ.dir/wikiLYNZ_autogen/mocs_compilation.cpp.o: \
  /usr/include/json/value.h /usr/include/json/forwards.h \
  /usr/include/json/config.h /usr/include/json/allocator.h \
  /usr/include/json/version.h /usr/include/qt6/QtCore/QJsonDocument \
- /usr/include/qt6/QtCore/qjsondocument.h /usr/include/qt6/QtCore/QFile \
- /usr/include/qt6/QtCore/qfile.h /usr/include/qt6/QtCore/qfiledevice.h \
+ /usr/include/qt6/QtCore/qjsondocument.h \
  /usr/include/qt6/QtCore/QResource /usr/include/qt6/QtCore/qresource.h

@@ -9,6 +9,9 @@
 #include <QJsonObject>
 #include <QMessageBox>
 #include <QThread>
+#include <QFile>
+
+#include "viewhistory.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -24,7 +27,9 @@ class MainWindow : public QMainWindow
 
     int chk = 0;
     int tChk = 0;
+    int endTime = 0;
     int countdown = 0;
+    QTimer *timer = new QTimer(this);
     std::string instance;
 
 public:
@@ -32,13 +37,17 @@ public:
     ~MainWindow();
 
     QJsonObject cfg;
-    int initalise(QJsonObject*);
+    int initialise(QJsonObject*);
 
 
 private:
     Ui::MainWindow *ui;
+    viewHistory historyView;
 
 private slots:
+    int launchLogs();
+    int missionAccomplished();
+    int missionFailed();
     void updateCountdown();
     void initAction();
     //void endGame();

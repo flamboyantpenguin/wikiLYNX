@@ -2,8 +2,9 @@
       "levels": 3},
   "meow?": "meow!!!",
  "data" : {
-     "meow" : {
+     "blisteringbarnacles" : {
          "checkpoints": 6,
+         "time": 600,
          "data": {
              "0": {
                  "url": "https://en.wikipedia.org/wiki/Paper"
@@ -25,8 +26,33 @@
              }
          }
      },
-     "rocketman" : {
+     "cattomosfet!" : {
          "checkpoints": 6,
+         "time": 900,
+         "data": {
+             "0": {
+                 "url": "https://en.wikipedia.org/wiki/Pencil"
+             },
+             "1": {
+                 "url": ""
+             },
+             "2": {
+                 "url": ""
+             },
+             "3": {
+                 "url": ""
+             },
+             "4": {
+                 "url": ""
+             },
+             "5": {
+                 "url": ""
+             }
+         }
+     },
+     "greenapple" : {
+         "checkpoints": 6,
+         "time": 720,
          "data": {
              "0": {
                  "url": "https://en.wikipedia.org/wiki/Pencil"
@@ -50,6 +76,7 @@
      },
      "debug" : {
          "checkpoints": 2,
+         "time": 10,
          "data": {
              "0": {
                  "url": "https://en.wikipedia.org/wiki/Pencil"
