@@ -35,12 +35,12 @@ MainWindow::~MainWindow()
 
 int MainWindow::initialise(QJsonObject *cfgData, int *d) {
 
-    countdown = 0;
+
     aTime = QTime::currentTime().toString("hh:mm:ss").toStdString();
     this->cfg = (*cfgData)["data"].toObject();
     this->tChk = (*cfgData)["checkpoints"].toInt();
-
     this->endTime = (*cfgData)["time"].toInt();
+    countdown = this->endTime;
     this->dontKillMe = d;
     QUrl url(this->cfg[QString::number(chk)].toObject()["url"].toString());
     void showHistory();
@@ -55,11 +55,11 @@ int MainWindow::initialise(QJsonObject *cfgData, int *d) {
 
 void MainWindow::updateCountdown()
 {
-    countdown++;
+    countdown--;
     ui->clock->setText(QTime::currentTime().toString("hh:mm:ss"));
     ui->counter->setText(QString::number(countdown));
 
-    if (countdown == this->endTime) {
+    if (countdown == 0) {
         this->missionFailed();
     }
 
@@ -83,8 +83,6 @@ void MainWindow::initAction() {
 
 int MainWindow::missionAccomplished() {
 
-
-
     chk++;
     int prg = (chk/ (float) (tChk-1)) *100;
     ui->progressBar->setValue(prg);
@@ -93,7 +91,7 @@ int MainWindow::missionAccomplished() {
         timer->stop();
         std::string cTime = QTime::currentTime().toString("hh:mm:ss").toStdString();
         *dontKillMe = 1;
-        QString c = QString::number(this->countdown);
+        QString c = QString::number(endTime-countdown);
         std::ofstream out("./wikiLYNX/"+instance+"/report.txt", std::ios_base::app);
         out << "Status: Passed\n";
         out << "Time Taken: "+c.toStdString()+"\n";
@@ -101,7 +99,7 @@ int MainWindow::missionAccomplished() {
         out << "Finish Time: "+cTime+"\n";
         out.close();
         ui->field->printToPdf("./wikiLYNX/"+QString::fromStdString(instance)+"/fPage.pdf");
-        congratsView.initialise(c, QString::fromStdString(this->aTime), QString::fromStdString(cTime), instance);
+        congratsView.initialise(c, QString::fromStdString(this->aTime), QString::fromStdString(cTime), instance, 1);
         QMessageBox::information(this, "wikiLYNX", "You Won!!!", QMessageBox::Ok);
         congratsView.show();
         //QMessageBox::information(this, "wikiLYNX", "Time Taken: "+c+" seconds", QMessageBox::Ok);
@@ -116,7 +114,9 @@ int MainWindow::missionAccomplished() {
 
 int MainWindow::missionFailed(){
 
-    QString c = QString::number(this->countdown);
+    *dontKillMe = 1;
+    QString c = QString::number(endTime-countdown);
+    std::string cTime = QTime::currentTime().toString("hh:mm:ss").toStdString();
     ui->field->printToPdf("./wikiLYNX/"+QString::fromStdString(instance)+"/fPage.pdf");
     std::ofstream out("./wikiLYNX/"+instance+"/report.txt", std::ios_base::app);
     out << "Status: Failed\n";
@@ -124,6 +124,8 @@ int MainWindow::missionFailed(){
     out << "Finish Time: "+QTime::currentTime().toString("hh:mm:ss").toStdString()+"\n";
     out.close();
     QMessageBox::critical(this, "wikiLYNX", "Timeout!", QMessageBox::Ok);
+    congratsView.initialise(c, QString::fromStdString(this->aTime), QString::fromStdString(cTime), instance, 0);
+    congratsView.show();
     close();
     return 0;
 }

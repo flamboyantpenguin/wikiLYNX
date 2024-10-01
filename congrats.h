@@ -19,10 +19,11 @@ public:
     ~congrats();
     int *dontKillMe;
     std::string instanceName;
-    void initialise(QString, QString, QString, std::string);
+    void initialise(QString, QString, QString, std::string, int);
 
 
 private:
+    viewHistory hView;
     Ui::congrats *ui;
 
 private slots:

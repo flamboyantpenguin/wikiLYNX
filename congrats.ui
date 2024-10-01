@@ -38,7 +38,7 @@
     <string>Close</string>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="mainLabel">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -61,7 +61,7 @@
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLabel" name="label_2">
+  <widget class="QLabel" name="message">
    <property name="geometry">
     <rect>
      <x>10</x>

@@ -7,6 +7,7 @@ viewHistory::viewHistory(QWidget *parent)
     , ui(new Ui::viewHistory)
 {
     ui->setupUi(this);
+    this->setWindowModality(Qt::ApplicationModal);
     connect(ui->closeButton, SIGNAL(clicked()), this, SLOT(close()));
 
 }

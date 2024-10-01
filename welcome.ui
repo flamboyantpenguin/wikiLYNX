@@ -62,6 +62,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <height>61</height>
     </rect>
    </property>
+   <property name="inputMethodHints">
+    <set>Qt::ImhNone</set>
+   </property>
    <property name="frameShape">
     <enum>QFrame::NoFrame</enum>
    </property>
@@ -125,10 +128,10 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <widget class="QLabel" name="label1">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>170</y>
-     <width>101</width>
-     <height>18</height>
+     <x>190</x>
+     <y>140</y>
+     <width>151</width>
+     <height>21</height>
     </rect>
    </property>
    <property name="font">
@@ -139,14 +142,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <property name="text">
     <string>Enter Passcode</string>
    </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
   </widget>
   <widget class="QPushButton" name="initButton">
    <property name="geometry">
     <rect>
      <x>220</x>
-     <y>240</y>
+     <y>200</y>
      <width>81</width>
-     <height>26</height>
+     <height>31</height>
     </rect>
    </property>
    <property name="text">
@@ -156,9 +162,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <widget class="QPushButton" name="termsButton">
    <property name="geometry">
     <rect>
-     <x>400</x>
+     <x>419</x>
      <y>310</y>
-     <width>80</width>
+     <width>61</width>
      <height>31</height>
     </rect>
    </property>
@@ -169,9 +175,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
   <widget class="QPushButton" name="rulesButton">
    <property name="geometry">
     <rect>
-     <x>310</x>
+     <x>350</x>
      <y>310</y>
-     <width>80</width>
+     <width>61</width>
      <height>31</height>
     </rect>
    </property>
@@ -183,8 +189,8 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <property name="geometry">
     <rect>
      <x>190</x>
-     <y>200</y>
-     <width>141</width>
+     <y>160</y>
+     <width>151</width>
      <height>26</height>
     </rect>
    </property>
@@ -215,6 +221,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="textInteractionFlags">
     <set>Qt::NoTextInteraction</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="feedbackButton">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>310</y>
+     <width>80</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Feedback</string>
    </property>
   </widget>
  </widget>

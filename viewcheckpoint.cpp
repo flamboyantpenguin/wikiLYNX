@@ -7,6 +7,7 @@ viewcheckpoint::viewcheckpoint(QWidget *parent) :
     ui(new Ui::viewcheckpoint)
 {
     ui->setupUi(this);
+    this->setWindowModality(Qt::ApplicationModal);
     connect(ui->closeButton, SIGNAL(clicked()), this, SLOT(close()));
 
 }

@@ -2,11 +2,6 @@
     <qresource prefix="/base">
         <file>assets/images/rset-logo-menu.png</file>
         <file>assets/images/wikiLYNX_logo.png</file>
-    </qresource>
-    <qresource prefix="/cfg">
-        <file>gameData.json</file>
-    </qresource>
-    <qresource prefix="/fonts">
         <file>assets/fonts/CourierPrime-Bold.ttf</file>
         <file>assets/fonts/CourierPrime-BoldItalic.ttf</file>
         <file>assets/fonts/CourierPrime-Italic.ttf</file>
@@ -14,6 +9,10 @@
         <file>assets/fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf</file>
         <file>assets/fonts/NotoSans-VariableFont_wdth,wght.ttf</file>
         <file>assets/fonts/OFL.txt</file>
-        <file>assets/fonts/README.txt</file>
+        <file>assets/fonts/NotoSans-Bold.ttf</file>
+        <file>assets/fonts/NotoSans-Regular.ttf</file>
+    </qresource>
+    <qresource prefix="/cfg">
+        <file>gameData.json</file>
     </qresource>
 </RCC>

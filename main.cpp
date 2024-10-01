@@ -18,7 +18,12 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QFontDatabase::addApplicationFont(":/fonts/*.ttf");
+    QFontDatabase::addApplicationFont(":/base/assets/fonts/CourierPrime-Bold.ttf");
+    QFontDatabase::addApplicationFont(":/base/assets/fonts/CourierPrime-Regular.ttf");
+    QFontDatabase::addApplicationFont(":/base/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf");
+    QFontDatabase::addApplicationFont(":/base/assets/fonts/NotoSans-Regular.ttf");
+    //QFontDatabase::addApplicationFont(":/base/assets/fonts/Mukta-Bold.ttf");
+
     //MainWindow game;
 
     welcomeUI dialog;
