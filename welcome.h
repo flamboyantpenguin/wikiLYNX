@@ -15,6 +15,7 @@ class welcomeUI : public QDialog
 public:
     explicit welcomeUI(QDialog *parent = nullptr);
 
+    int *dontKillParse0;
     QJsonObject data, instance;
     //Json::Value cfg;
 
@@ -22,8 +23,7 @@ private slots:
    int startGame();
 
 private:
+    MainWindow game;
     Ui::welcomeDialog ui;
 
-private:
-    MainWindow game;
 };

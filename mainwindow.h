@@ -8,10 +8,12 @@
 #include <fstream>
 #include <QJsonObject>
 #include <QMessageBox>
-#include <QThread>
 #include <QFile>
+#include <QEvent>
 
+#include "congrats.h"
 #include "viewhistory.h"
+#include "viewcheckpoint.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -26,9 +28,11 @@ class MainWindow : public QMainWindow
 
 
     int chk = 0;
+    //int *array;
     int tChk = 0;
     int endTime = 0;
     int countdown = 0;
+    std::string aTime;
     QTimer *timer = new QTimer(this);
     std::string instance;
 
@@ -37,19 +41,25 @@ public:
     ~MainWindow();
 
     QJsonObject cfg;
-    int initialise(QJsonObject*);
+    int *dontKillMe;
+    int initialise(QJsonObject*, int*);
 
 
 private:
     Ui::MainWindow *ui;
+    congrats congratsView;
     viewHistory historyView;
+    viewcheckpoint checkpointView;
 
 private slots:
-    int launchLogs();
+    void launchLogs();
+    void viewCheckPoints();
     int missionAccomplished();
     int missionFailed();
     void updateCountdown();
     void initAction();
     //void endGame();
+
 };
+
 #endif // MAINWINDOW_H

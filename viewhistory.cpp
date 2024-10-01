@@ -1,14 +1,16 @@
 #include "viewhistory.h"
 #include "ui_viewhistory.h"
 
+
 viewHistory::viewHistory(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::viewHistory)
 {
     ui->setupUi(this);
-    connect(ui->buttonBox, SIGNAL(accepted()), this, SLOT(close()));
+    connect(ui->closeButton, SIGNAL(clicked()), this, SLOT(close()));
 
 }
+
 
 viewHistory::~viewHistory()
 {
@@ -16,7 +18,6 @@ viewHistory::~viewHistory()
 }
 
 
-int viewHistory::initialise(QString *data) {
+void viewHistory::initialise(QString *data) {
     ui->textBrowser->setText(*data);
-    return 0;
 }

@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->field, &QWebEngineView::urlChanged, this, &MainWindow::initAction);
     connect(ui->exitButton, &QPushButton::clicked, this, &QCoreApplication::quit, Qt::QueuedConnection);
     connect(ui->showHistory, SIGNAL(clicked(bool)), this, SLOT(launchLogs()));
-    //timer->start(1000);
+    connect(ui->viewChkButton, SIGNAL(clicked(bool)), this, SLOT(viewCheckPoints()));
 
 }
 
@@ -33,16 +33,20 @@ MainWindow::~MainWindow()
 }
 
 
-int MainWindow::initialise(QJsonObject *cfgData) {
+int MainWindow::initialise(QJsonObject *cfgData, int *d) {
 
     countdown = 0;
+    aTime = QTime::currentTime().toString("hh:mm:ss").toStdString();
     this->cfg = (*cfgData)["data"].toObject();
     this->tChk = (*cfgData)["checkpoints"].toInt();
+
     this->endTime = (*cfgData)["time"].toInt();
+    this->dontKillMe = d;
     QUrl url(this->cfg[QString::number(chk)].toObject()["url"].toString());
     void showHistory();
     ui->field->load(url);
     ui->progressBar->setValue(0);
+    QApplication::processEvents();
 
     timer->start(1000);
     return 0;
@@ -58,6 +62,7 @@ void MainWindow::updateCountdown()
     if (countdown == this->endTime) {
         this->missionFailed();
     }
+
 }
 
 
@@ -65,6 +70,7 @@ void MainWindow::initAction() {
 
     auto url = ui->field->page()->url();
     std::ofstream out("./wikiLYNX/"+instance+"/log.txt", std::ios_base::app);
+    out << QDateTime::currentDateTime().toString("yyyy/MM/dd|hh:mm:ss").toStdString()+">>\t";
     out << url.toString().toStdString()+"\n";
     out.close();
 
@@ -77,20 +83,28 @@ void MainWindow::initAction() {
 
 int MainWindow::missionAccomplished() {
 
+
+
     chk++;
     int prg = (chk/ (float) (tChk-1)) *100;
     ui->progressBar->setValue(prg);
 
     if (prg == 100) {
-        auto c = QString::number(this->countdown);
+        timer->stop();
+        std::string cTime = QTime::currentTime().toString("hh:mm:ss").toStdString();
+        *dontKillMe = 1;
+        QString c = QString::number(this->countdown);
         std::ofstream out("./wikiLYNX/"+instance+"/report.txt", std::ios_base::app);
         out << "Status: Passed\n";
         out << "Time Taken: "+c.toStdString()+"\n";
-        out << "Finish Time: "+QTime::currentTime().toString("hh:mm:ss").toStdString()+"\n";
+        out << "Start Time: "+aTime+"\n";
+        out << "Finish Time: "+cTime+"\n";
         out.close();
         ui->field->printToPdf("./wikiLYNX/"+QString::fromStdString(instance)+"/fPage.pdf");
+        congratsView.initialise(c, QString::fromStdString(this->aTime), QString::fromStdString(cTime), instance);
         QMessageBox::information(this, "wikiLYNX", "You Won!!!", QMessageBox::Ok);
-        QMessageBox::information(this, "wikiLYNX", "Time Taken: "+c, QMessageBox::Ok);
+        congratsView.show();
+        //QMessageBox::information(this, "wikiLYNX", "Time Taken: "+c+" seconds", QMessageBox::Ok);
         close();
     }
 
@@ -115,13 +129,21 @@ int MainWindow::missionFailed(){
 }
 
 
-int MainWindow::launchLogs() {
+void MainWindow::launchLogs() {
 
-    QFile lFile("./wikiLYNX/"+QString::fromStdString(instance)+"/log.txt");
-    lFile.open(QIODevice::ReadOnly);
-    auto logs = QString(lFile.readAll());
-    lFile.close();
+    QFile f("./wikiLYNX/"+QString::fromStdString(instance)+"/log.txt");
+    f.open(QIODevice::ReadOnly);
+    auto logs = QString(f.readAll());
+    f.close();
+    historyView.dontKillMe = (this->dontKillMe);
     historyView.initialise(&logs);
     historyView.show();
-    return 0;
+}
+
+
+void MainWindow::viewCheckPoints() {
+
+    checkpointView.dontKillMe = (this->dontKillMe);
+    checkpointView.initialise(&cfg, &tChk, &endTime, &this->chk);
+    checkpointView.show();
 }

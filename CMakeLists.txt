@@ -33,7 +33,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         welcome.ui
         welcome.h welcome.cpp
         assets.qrc
-        viewhistory.h viewhistory.cpp viewhistory.ui
+
+
+        viewhistory.cpp viewhistory.h viewhistory.ui
+        viewcheckpoint.cpp viewcheckpoint.h viewcheckpoint.ui
+        congrats.ui
+        congrats.cpp congrats.h
 
     )
 # Define target properties for Android with Qt 6 as:

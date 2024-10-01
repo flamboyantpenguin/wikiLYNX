@@ -7,7 +7,6 @@ welcomeUI::welcomeUI(QDialog *parent)
     : QDialog(parent)
 {
     ui.setupUi(this);
-
     connect(ui.initButton, &QPushButton::clicked, this, &welcomeUI::startGame);
     connect(ui.passcodeInput, &QLineEdit::returnPressed, this, &welcomeUI::startGame);
 
@@ -15,7 +14,6 @@ welcomeUI::welcomeUI(QDialog *parent)
 
 
 int welcomeUI::startGame() {
-
 
     QFile cFile(":/cfg/gameData.json");
     cFile.open(QIODevice::ReadOnly);
@@ -30,9 +28,11 @@ int welcomeUI::startGame() {
 
     this->grabKeyboard();
     this->hide();
-    game.showFullScreen();
     auto temp = data["data"].toObject()[passcode].toObject();
-    game.initialise(&temp);
+    game.initialise(&temp, dontKillParse0);
+    *dontKillParse0 = 0;
+    game.showFullScreen();
+    //QApplication::setOverrideCursor(Qt::BusyCursor);
     QApplication::processEvents();
     return 0;
 

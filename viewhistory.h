@@ -2,6 +2,12 @@
 #define VIEWHISTORY_H
 
 #include <QDialog>
+#include <QThread>
+#include <QMessageBox>
+#include <QCloseEvent>
+#include <QWidget>
+#include <QEvent>
+
 
 namespace Ui {
 class viewHistory;
@@ -11,13 +17,24 @@ class viewHistory : public QDialog
 {
     Q_OBJECT
 
+
 public:
     explicit viewHistory(QWidget *parent = nullptr);
     ~viewHistory();
-    int initialise(QString*);
+    int *dontKillMe;
+    void initialise(QString*);
+
+protected:
+    void closeEvent(QCloseEvent *event) override
+    {
+        *(this->dontKillMe) = 1;
+        QDialog::closeEvent(event);
+        *(this->dontKillMe) = 0;
+    }
 
 private:
     Ui::viewHistory *ui;
+
 };
 
 #endif // VIEWHISTORY_H
