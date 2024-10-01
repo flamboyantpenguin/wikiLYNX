@@ -35,7 +35,7 @@ void congrats::initialise(QString c, QString sTime, QString eTime, std::string i
 void congrats::viewhistory() {
 
     int t;
-    QFile lFile("./wikiLYNX/"+QString::fromStdString(this->instanceName)+"/log.txt");
+    QFile lFile("./gData/"+QString::fromStdString(this->instanceName)+"/log.txt");
     lFile.open(QIODevice::ReadOnly);
     auto logs = QString(lFile.readAll());
     lFile.close();

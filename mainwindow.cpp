@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     instance = "instance"+QDateTime::currentDateTime().toString("yyyyMMddHHmmss").toStdString();
-    fs::create_directories("./wikiLYNX/"+instance);
+    fs::create_directories("./gData/"+instance);
 
     ui->clock->setAlignment(Qt::AlignCenter);
     ui->counter->setAlignment(Qt::AlignCenter);
@@ -69,7 +69,7 @@ void MainWindow::updateCountdown()
 void MainWindow::initAction() {
 
     auto url = ui->field->page()->url();
-    std::ofstream out("./wikiLYNX/"+instance+"/log.txt", std::ios_base::app);
+    std::ofstream out("./gData/"+instance+"/log.txt", std::ios_base::app);
     out << QDateTime::currentDateTime().toString("yyyy/MM/dd|hh:mm:ss").toStdString()+">>\t";
     out << url.toString().toStdString()+"\n";
     out.close();
@@ -92,13 +92,13 @@ int MainWindow::missionAccomplished() {
         std::string cTime = QTime::currentTime().toString("hh:mm:ss").toStdString();
         *dontKillMe = 1;
         QString c = QString::number(endTime-countdown);
-        std::ofstream out("./wikiLYNX/"+instance+"/report.txt", std::ios_base::app);
+        std::ofstream out("./gData/"+instance+"/report.txt", std::ios_base::app);
         out << "Status: Passed\n";
         out << "Time Taken: "+c.toStdString()+"\n";
         out << "Start Time: "+aTime+"\n";
         out << "Finish Time: "+cTime+"\n";
         out.close();
-        ui->field->printToPdf("./wikiLYNX/"+QString::fromStdString(instance)+"/fPage.pdf");
+        ui->field->printToPdf("./gData/"+QString::fromStdString(instance)+"/fPage.pdf");
         congratsView.initialise(c, QString::fromStdString(this->aTime), QString::fromStdString(cTime), instance, 1);
         QMessageBox::information(this, "wikiLYNX", "You Won!!!", QMessageBox::Ok);
         congratsView.show();
@@ -117,8 +117,8 @@ int MainWindow::missionFailed(){
     *dontKillMe = 1;
     QString c = QString::number(endTime-countdown);
     std::string cTime = QTime::currentTime().toString("hh:mm:ss").toStdString();
-    ui->field->printToPdf("./wikiLYNX/"+QString::fromStdString(instance)+"/fPage.pdf");
-    std::ofstream out("./wikiLYNX/"+instance+"/report.txt", std::ios_base::app);
+    ui->field->printToPdf("./gData/"+QString::fromStdString(instance)+"/fPage.pdf");
+    std::ofstream out("./gData/"+instance+"/report.txt", std::ios_base::app);
     out << "Status: Failed\n";
     out << "Time Taken: "+c.toStdString()+"\n";
     out << "Finish Time: "+QTime::currentTime().toString("hh:mm:ss").toStdString()+"\n";
@@ -133,7 +133,7 @@ int MainWindow::missionFailed(){
 
 void MainWindow::launchLogs() {
 
-    QFile f("./wikiLYNX/"+QString::fromStdString(instance)+"/log.txt");
+    QFile f("./gData/"+QString::fromStdString(instance)+"/log.txt");
     f.open(QIODevice::ReadOnly);
     auto logs = QString(f.readAll());
     f.close();
