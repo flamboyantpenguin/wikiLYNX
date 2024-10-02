@@ -34,8 +34,11 @@ int welcomeUI::startGame() {
 
     this->grabKeyboard();
     this->hide();
+    int ald = data["allowOtherDomains"].toInt();
+    //auto domain = data["domain"].toString();
+    auto domain = QString::fromStdString("https://en.wikipedia.org");
     auto temp = data["data"].toObject()[passcode].toObject();
-    game.initialise(&temp, dontKillParse0);
+    game.initialise(&temp, dontKillParse0, domain, ald);
     *dontKillParse0 = 0;
     game.showFullScreen();
     QApplication::processEvents();

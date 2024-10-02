@@ -1,7 +1,9 @@
 {"info" : {
+    "domain": "https://en.wikipedia.org",
+    "allowOtherDomains": 0,
     "levels": 3},
     "data" : {
-     "fraidycat" : {
+     "flyingduck" : {
          "checkpoints": 5,
          "time": 600,
          "data": {
@@ -102,6 +104,48 @@
              "1": {
                  "url": "https://en.wikipedia.org/wiki/Paper",
                  "name": "Paper"
+             }
+         }
+     },
+     "toinifinityandbeyond" : {
+         "checkpoints": 2,
+         "time": 1200,
+         "data": {
+             "0": {
+                 "url": "https://en.wikipedia.org/wiki/Cat",
+                 "name": "Cat"
+             },
+             "1": {
+                 "url": "https://en.wikipedia.org/wiki/MOSFET",
+                 "name": "Mosfet"
+             }
+         }
+     },
+     "maytheforcebewithyou" : {
+         "checkpoints": 2,
+         "time": 1200,
+         "data": {
+             "0": {
+                 "url": "https://en.wikipedia.org/wiki/MrBeast",
+                 "name": "MrBeast"
+             },
+             "1": {
+                 "url": "https://en.wikipedia.org/wiki/Studio_Ghibli",
+                 "name": "Studio Ghiblo"
+             }
+         }
+     },
+     "doordonotthereisnotry" : {
+         "checkpoints": 2,
+         "time": 1200,
+         "data": {
+             "0": {
+                 "url": "https://en.wikipedia.org/wiki/Mickey_Mouse",
+                 "name": "Mickey Mouse"
+             },
+             "1": {
+                 "url": "https://en.wikipedia.org/wiki/Apollo_11",
+                 "name": "Apollo 11"
              }
          }
      }

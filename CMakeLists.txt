@@ -14,7 +14,6 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets WebEngineWidgets)
 
 if (MSVC)
     find_package(jsoncpp CONFIG REQUIRED)
-    target_link_libraries(jsoncpp_lib)
     set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/assets/logo.rc")
     #qt_add_executable(photosurfaceexample main.cpp ${app_icon_resource_windows})
 endif (MSVC)
@@ -61,8 +60,13 @@ else()
 endif()
 
 
-target_link_libraries(wikiLYNX PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt::WebEngineWidgets)
+if (MSVC)
+    target_link_libraries(wikiLYNX PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt::WebEngineWidgets jsoncpp_lib)
+endif (MSVC)
 
+if (UNIX)
+    target_link_libraries(wikiLYNX PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt::WebEngineWidgets jsoncpp_lib)
+endif(UNIX)
 
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

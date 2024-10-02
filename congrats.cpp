@@ -20,13 +20,17 @@ void congrats::initialise(QString c, QString sTime, QString eTime, std::string i
 
     QString m = QString::number(c.toInt()/(60.0));
     this->instanceName = instance;
-    ui->timeTaken->setText(m+" minutes ("+c+") seconds");
+    ui->timeTaken->setText(m+" minutes ("+c+" seconds) ");
     ui->startTime->setText(sTime);
     ui->endTime->setText(eTime);
 
     if (!win) {
         ui->mainLabel->setText(QString("Mission Failed"));
         ui->message->setText(QString("Oops. Seems you couldn't complete the challenge in time. Try again!"));
+    }
+    else if (win == 2) {
+        ui->mainLabel->setText(QString("Mission Aborted"));
+        ui->message->setText(QString("Game ended abruptly."));
     }
 
 }

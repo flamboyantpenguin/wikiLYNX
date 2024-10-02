@@ -2,6 +2,7 @@
 #include "ui_welcome.h"
 #include "welcome.h"
 
+#include <fstream>
 #include <QDialog>
 #include <QApplication>
 #include <QFontDatabase>
@@ -39,6 +40,9 @@ int main(int argc, char *argv[])
 void onFocusChanged(QWidget *oldFocus, QWidget* newFocus) {
     if(newFocus == nullptr && !dontKill) {
         //QMessageBox::critical(nullptr, "wikiLYNX", "Game Rule Violiation! You're not allowed to switch windows during game session", QMessageBox::Ok);
+        //std::ofstream out("./gData/"+instance+"/report.txt", std::ios_base::app);
+        //out << "Status: Policy Violation\n";
+        //out.close();
         QApplication::quit();
         return;
     }
