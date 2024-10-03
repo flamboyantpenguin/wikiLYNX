@@ -9,6 +9,7 @@ set(CMAKE_AUTORCC ON)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets WebEngineWidgets)
 
@@ -21,8 +22,8 @@ endif (MSVC)
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+        include/mainwindow.h
+        ui/mainwindow.ui
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
@@ -30,15 +31,12 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         MANUAL_FINALIZATION
         ${PROJECT_SOURCES}
         ${app_icon_resource_windows}
-        welcome.ui
-        welcome.h welcome.cpp
-        assets.qrc
 
-
-        viewhistory.cpp viewhistory.h viewhistory.ui
-        viewcheckpoint.cpp viewcheckpoint.h viewcheckpoint.ui
-        congrats.ui
-        congrats.cpp congrats.h
+        assets/assets.qrc
+        ui/welcome.ui include/welcome.h welcome.cpp
+        viewhistory.cpp include/viewhistory.h ui/viewhistory.ui
+        viewcheckpoint.cpp include/viewcheckpoint.h ui/viewcheckpoint.ui
+        ui/congrats.ui congrats.cpp include/congrats.h
 
     )
 # Define target properties for Android with Qt 6 as:
@@ -65,7 +63,7 @@ if (MSVC)
 endif (MSVC)
 
 if (UNIX)
-    target_link_libraries(wikiLYNX PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt::WebEngineWidgets jsoncpp_lib)
+    target_link_libraries(wikiLYNX PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt::WebEngineWidgets)
 endif(UNIX)
 
 
@@ -84,6 +82,8 @@ set_target_properties(wikiLYNX PROPERTIES
 )
 
 include(GNUInstallDirs)
+include_directories("ui include")
+
 install(TARGETS wikiLYNX
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}

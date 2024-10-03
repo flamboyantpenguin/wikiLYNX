@@ -2,14 +2,12 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QTimer>
-#include <QDebug>
 #include <filesystem>
 #include <fstream>
 #include <QJsonObject>
 #include <QMessageBox>
 #include <QFile>
-#include <QEvent>
+#include <QTimer>
 
 #include "congrats.h"
 #include "viewhistory.h"

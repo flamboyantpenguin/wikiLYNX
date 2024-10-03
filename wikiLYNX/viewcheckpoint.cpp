@@ -1,5 +1,5 @@
-#include "viewcheckpoint.h"
-#include "ui_viewcheckpoint.h"
+#include "include/viewcheckpoint.h"
+#include "ui/ui_viewcheckpoint.h"
 
 
 viewcheckpoint::viewcheckpoint(QWidget *parent) :

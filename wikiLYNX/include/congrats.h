@@ -7,9 +7,11 @@
 #include "viewhistory.h"
 #include "viewcheckpoint.h"
 
+QT_BEGIN_NAMESPACE
 namespace Ui {
 class congrats;
 }
+QT_END_NAMESPACE
 
 class congrats : public QDialog
 {

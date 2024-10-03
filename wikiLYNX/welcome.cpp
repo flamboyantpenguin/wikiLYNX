@@ -1,17 +1,20 @@
-#include "welcome.h"
+#include "include/welcome.h"
+#include "ui/ui_welcome.h"
+
 //#include "./ui_mainwindow.h"
 
 
 welcomeUI::welcomeUI(QDialog *parent)
     : QDialog(parent)
+    , ui(new Ui::welcomeDialog)
 {
-    ui.setupUi(this);
-    connect(ui.initButton, &QPushButton::clicked, this, &welcomeUI::startGame);
-    connect(ui.termsButton, &QPushButton::clicked, this, &welcomeUI::showTerms);
-    connect(ui.rulesButton, &QPushButton::clicked, this, &welcomeUI::showRules);
-    connect(ui.settingsButton, &QPushButton::clicked, this, &welcomeUI::editSettings);
-    connect(ui.feedbackButton, &QPushButton::clicked, this, &welcomeUI::launchFeedback);
-    connect(ui.passcodeInput, &QLineEdit::returnPressed, this, &welcomeUI::startGame);
+    ui->setupUi(this);
+    connect(ui->initButton, &QPushButton::clicked, this, &welcomeUI::startGame);
+    connect(ui->termsButton, &QPushButton::clicked, this, &welcomeUI::showTerms);
+    connect(ui->rulesButton, &QPushButton::clicked, this, &welcomeUI::showRules);
+    connect(ui->settingsButton, &QPushButton::clicked, this, &welcomeUI::editSettings);
+    connect(ui->feedbackButton, &QPushButton::clicked, this, &welcomeUI::launchFeedback);
+    connect(ui->passcodeInput, &QLineEdit::returnPressed, this, &welcomeUI::startGame);
     //QFont fnt("Mukta", 24, QFont::Bold);
     //ui.label->setFont(fnt);
     //ui.label->setText(QString("yyyyy"));
@@ -23,7 +26,7 @@ int welcomeUI::startGame() {
 
     QFile cFile(":/cfg/gameData.json");
     cFile.open(QIODevice::ReadOnly);
-    QString passcode = ui.passcodeInput->text();
+    QString passcode = ui->passcodeInput->text();
     data = QJsonDocument::fromJson(cFile.readAll()).object();
     cFile.close();
 

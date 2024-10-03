@@ -1,5 +1,7 @@
-#include "congrats.h"
-#include "ui_congrats.h"
+#include "include/congrats.h"
+#include "ui/ui_congrats.h"
+
+//#include "ui_congrats.h"
 
 congrats::congrats(QWidget *parent) :
     QDialog(parent),

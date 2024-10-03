@@ -2,10 +2,7 @@
 #define VIEWHISTORY_H
 
 #include <QDialog>
-#include <QThread>
-#include <QMessageBox>
 #include <QCloseEvent>
-#include <QWidget>
 #include <QEvent>
 
 

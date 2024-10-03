@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/base">
+        <file>fonts/CourierPrime_OFL.txt</file>
+        <file>fonts/CourierPrime-Bold.ttf</file>
+        <file>fonts/CourierPrime-BoldItalic.ttf</file>
+        <file>fonts/CourierPrime-Italic.ttf</file>
+        <file>fonts/CourierPrime-Regular.ttf</file>
+        <file>fonts/NotoSans_OFL.txt</file>
+        <file>fonts/NotoSans-Bold.ttf</file>
+        <file>fonts/NotoSans-Italic-VariableFont_wdth,wght.ttf</file>
+        <file>fonts/NotoSans-Regular.ttf</file>
+        <file>fonts/NotoSans-VariableFont_wdth,wght.ttf</file>
+        <file>images/rset-logo-menu.png</file>
+        <file>images/wikiLYNX_logo.png</file>
+        <file>images/wikipedia.ico</file>
+    </qresource>
+    <qresource prefix="/cfg">
+        <file>gameData.json</file>
+    </qresource>
+</RCC>

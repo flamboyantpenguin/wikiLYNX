@@ -1,5 +1,5 @@
-#include "viewhistory.h"
-#include "ui_viewhistory.h"
+#include "include/viewhistory.h"
+#include "ui/ui_viewhistory.h"
 
 
 viewHistory::viewHistory(QWidget *parent)

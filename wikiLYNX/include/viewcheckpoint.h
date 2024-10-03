@@ -3,7 +3,6 @@
 
 #include <QDialog>
 #include <QJsonObject>
-#include <QThread>
 #include <QCloseEvent>
 #include <QHeaderView>
 

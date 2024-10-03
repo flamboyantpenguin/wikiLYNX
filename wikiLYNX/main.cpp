@@ -1,6 +1,6 @@
-#include "mainwindow.h"
-#include "ui_welcome.h"
-#include "welcome.h"
+#include "include/mainwindow.h"
+#include "include/welcome.h"
+#include "ui/ui_welcome.h"
 
 #include <fstream>
 #include <QDialog>
@@ -19,11 +19,10 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
 
-    QFontDatabase::addApplicationFont(":/base/assets/fonts/CourierPrime-Bold.ttf");
-    QFontDatabase::addApplicationFont(":/base/assets/fonts/CourierPrime-Regular.ttf");
-    QFontDatabase::addApplicationFont(":/base/assets/fonts/NotoSans-VariableFont_wdth,wght.ttf");
-    QFontDatabase::addApplicationFont(":/base/assets/fonts/NotoSans-Regular.ttf");
-    //QFontDatabase::addApplicationFont(":/base/assets/fonts/Mukta-Bold.ttf");
+    QFontDatabase::addApplicationFont(":/base/fonts/CourierPrime-Bold.ttf");
+    QFontDatabase::addApplicationFont(":/base/fonts/CourierPrime-Regular.ttf");
+    QFontDatabase::addApplicationFont(":/base/fonts/NotoSans-VariableFont_wdth,wght.ttf");
+    QFontDatabase::addApplicationFont(":/base/fonts/NotoSans-Regular.ttf");
 
     //MainWindow game;
 

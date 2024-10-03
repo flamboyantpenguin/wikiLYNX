@@ -8,9 +8,12 @@
 #include <QDesktopServices>
 #include <QString>
 
-#include "ui_welcome.h"
 #include "mainwindow.h"
 
+
+namespace Ui {
+class welcomeDialog;
+}
 
 class welcomeUI : public QDialog
 {
@@ -35,6 +38,6 @@ private slots:
 
 private:
     MainWindow game;
-    Ui::welcomeDialog ui;
+    Ui::welcomeDialog *ui;
 
 };
