@@ -19,7 +19,7 @@ public:
     explicit viewcheckpoint(QWidget *parent = nullptr);
     ~viewcheckpoint();
     int *dontKillMe;
-    void initialise(QJsonObject*, int*, int*, int*);
+    void initialise(QJsonObject*, int*, int*);
 
 protected:
     void closeEvent(QCloseEvent *event) override

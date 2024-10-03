@@ -29,12 +29,13 @@ class MainWindow : public QMainWindow
 
     int chk = 0;
     int alD = 1;
-    //int *array;
     int tChk = 0;
     std::string domain;
     int endTime = 0;
+    int cCount = 0;
     int countdown = 0;
     std::string aTime;
+    std::string cTime;
     QTimer *timer = new QTimer(this);
     std::string instance;
 

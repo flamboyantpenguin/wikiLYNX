@@ -18,7 +18,8 @@ viewcheckpoint::~viewcheckpoint()
 }
 
 
-void viewcheckpoint::initialise(QJsonObject *data, int *c, int *time, int *cStatus) {
+void viewcheckpoint::initialise(QJsonObject *data, int *c, int *cStatus) {
+
     ui->table->clear();
     //*(dontKillMe) = 1;
     ui->table->setRowCount(*c);

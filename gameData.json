@@ -27,7 +27,7 @@
              }
          }
      },
-     "blisteringbarnacles" : {
+     "pingus" : {
          "checkpoints": 4,
          "time": 600,
          "data": {
@@ -94,7 +94,7 @@
          }
      },
      "debug" : {
-         "checkpoints": 2,
+         "checkpoints": 3,
          "time": 10,
          "data": {
              "0": {
@@ -104,10 +104,14 @@
              "1": {
                  "url": "https://en.wikipedia.org/wiki/Paper",
                  "name": "Paper"
+             },
+             "2": {
+                 "url": "https://en.wikipedia.org/wiki/Cat",
+                 "name": "Paper"
              }
          }
      },
-     "toinifinityandbeyond" : {
+     "youseewhatyouthinkyousee" : {
          "checkpoints": 2,
          "time": 1200,
          "data": {
@@ -135,7 +139,7 @@
              }
          }
      },
-     "doordonotthereisnotry" : {
+     "toinfinityandbeyond" : {
          "checkpoints": 2,
          "time": 1200,
          "data": {

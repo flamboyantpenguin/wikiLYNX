@@ -16,13 +16,17 @@ congrats::~congrats()
 }
 
 
-void congrats::initialise(QString c, QString sTime, QString eTime, std::string instance, int win) {
+void congrats::initialise(QString c, QString sTime, QString eTime, std::string instance, int *chk, int win) {
+
+    //this->chk = *c;
+    //this->tChk = *chk;
 
     QString m = QString::number(c.toInt()/(60.0));
     this->instanceName = instance;
     ui->timeTaken->setText(m+" minutes ("+c+" seconds) ");
     ui->startTime->setText(sTime);
     ui->endTime->setText(eTime);
+    ui->chkCleared->setText(QString::number(*chk));
 
     if (!win) {
         ui->mainLabel->setText(QString("Mission Failed"));
@@ -46,4 +50,13 @@ void congrats::viewhistory() {
     hView.dontKillMe = (&t);
     hView.initialise(&logs);
     hView.show();
+}
+
+
+void congrats::viewCheckPoints() {
+
+    int t;
+    //checkpointView.dontKillMe = (&t);
+    //checkpointView.initialise(&cfg, &this->chk, &this->tChk);
+    //checkpointView.show();
 }

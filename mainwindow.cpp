@@ -41,6 +41,7 @@ int MainWindow::initialise(QJsonObject *cfgData, int *c, QString allowedDomain, 
     this->tChk = (*cfgData)["checkpoints"].toInt();
     this->endTime = (*cfgData)["time"].toInt();
     this->alD = ald;
+    this->cCount = this->endTime;
     this->domain = allowedDomain.toStdString();
     countdown = this->endTime;
     this->dontKillMe = c;
@@ -99,23 +100,23 @@ int MainWindow::missionAccomplished() {
     chk++;
     int prg = (chk/ (float) (tChk-1)) *100;
     ui->progressBar->setValue(prg);
+    this->cCount = this->countdown;
+    this->cTime = QTime::currentTime().toString("hh:mm:ss.zzz").toStdString();
 
     if (prg == 100) {
         timer->stop();
-        std::string cTime = QTime::currentTime().toString("hh:mm:ss.zzz").toStdString();
         *dontKillMe = 1;
-        QString c = QString::number(endTime-countdown);
+        QString c = QString::number(endTime-cCount);
         std::ofstream out("./gData/"+instance+"/report.txt", std::ios_base::app);
         out << "Status: Passed\n";
         out << "Time Taken: "+c.toStdString()+"\n";
         out << "Start Time: "+aTime+"\n";
-        out << "Finish Time: "+cTime+"\n";
+        out << "CheckPoint Time: "+cTime+"\n";
         out.close();
         ui->field->printToPdf("./gData/"+QString::fromStdString(instance)+"/fPage.pdf");
-        congratsView.initialise(c, QString::fromStdString(this->aTime), QString::fromStdString(cTime), instance, 1);
+        congratsView.initialise(c, QString::fromStdString(this->aTime), QString::fromStdString(cTime), instance, &(this->chk), 1);
         QMessageBox::information(this, "wikiLYNX", "You Won!!!", QMessageBox::Ok);
         congratsView.show();
-        //QMessageBox::information(this, "wikiLYNX", "Time Taken: "+c+" seconds", QMessageBox::Ok);
         close();
     }
 
@@ -128,16 +129,15 @@ int MainWindow::missionAccomplished() {
 int MainWindow::missionFailed(){
 
     *dontKillMe = 1;
-    QString c = QString::number(endTime-countdown);
-    std::string cTime = QTime::currentTime().toString("hh:mm:ss.zzz").toStdString();
+    QString c = QString::number(endTime-cCount);
     ui->field->printToPdf("./gData/"+QString::fromStdString(instance)+"/fPage.pdf");
     std::ofstream out("./gData/"+instance+"/report.txt", std::ios_base::app);
     out << "Status: Failed\n";
     out << "Time Taken: "+c.toStdString()+"\n";
-    out << "Finish Time: "+QTime::currentTime().toString("hh:mm:ss.zzz").toStdString()+"\n";
+    out << "CheckPointTime Time: "+cTime+"\n";
     out.close();
     QMessageBox::critical(this, "wikiLYNX", "Timeout!", QMessageBox::Ok);
-    congratsView.initialise(c, QString::fromStdString(this->aTime), QString::fromStdString(cTime), instance, 0);
+    congratsView.initialise(c, QString::fromStdString(this->aTime), QString::fromStdString(cTime), instance, &(this->chk), 0);
     congratsView.show();
     close();
     return 0;
@@ -159,22 +159,24 @@ void MainWindow::launchLogs() {
 void MainWindow::viewCheckPoints() {
 
     checkpointView.dontKillMe = (this->dontKillMe);
-    checkpointView.initialise(&cfg, &tChk, &endTime, &this->chk);
+    checkpointView.initialise(&cfg, &this->tChk, &this->chk);
     checkpointView.show();
 }
 
 
 void MainWindow::endGame() {
+
+    timer->stop();
     *dontKillMe = 1;
-    QString c = QString::number(endTime-countdown);
-    std::string cTime = QTime::currentTime().toString("hh:mm:ss.zzz").toStdString();
+    QString c = QString::number(endTime-cCount);
     ui->field->printToPdf("./gData/"+QString::fromStdString(instance)+"/fPage.pdf");
     std::ofstream out("./gData/"+instance+"/report.txt", std::ios_base::app);
     out << "Status: Game Ended Abruptly\n";
     out << "Time Taken: "+c.toStdString()+"\n";
-    out << "Finish Time: "+QTime::currentTime().toString("hh:mm:ss.zzz").toStdString()+"\n";
+    out << "Start Time: "+aTime+"\n";
+    out << "CheckPoint Time: "+cTime+"\n";
     out.close();
-    congratsView.initialise(c, QString::fromStdString(this->aTime), QString::fromStdString(cTime), instance, 2);
+    congratsView.initialise(c, QString::fromStdString(this->aTime), QString::fromStdString(cTime), instance,  &(this->chk), 2);
     congratsView.show();
     close();
 }
