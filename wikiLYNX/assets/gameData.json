@@ -32,6 +32,7 @@
      },
      "pingus" : {
          "checkpoints": 4,
+         "difficulty": "easy",
          "time": 600.0,
          "data": {
              "0": {
@@ -54,6 +55,7 @@
      },
      "cattomosfet!" : {
          "checkpoints": 5,
+         "difficulty": "medium",
          "time": 900.0,
          "data": {
              "0": {
@@ -80,6 +82,7 @@
      },
      "greenapple" : {
          "checkpoints": 3,
+         "difficulty": "hard",
          "time": 720.0,
          "data": {
              "0": {
@@ -98,6 +101,7 @@
      },
      "debug" : {
          "checkpoints": 3,
+         "difficulty": "debug",
          "time": 10.0,
          "data": {
              "0": {
@@ -116,6 +120,7 @@
      },
      "youseewhatyouthinkyousee" : {
          "checkpoints": 2,
+         "difficulty": "hard",
          "time": 1200.0,
          "data": {
              "0": {
@@ -130,6 +135,7 @@
      },
      "maytheforcebewithyou" : {
          "checkpoints": 2,
+         "difficulty": "hard",
          "time": 1200.0,
          "data": {
              "0": {
@@ -144,6 +150,7 @@
      },
      "toinfinityandbeyond" : {
          "checkpoints": 2,
+         "difficulty": "hard",
          "time": 1200.0,
          "data": {
              "0": {
@@ -153,6 +160,37 @@
              "1": {
                  "url": "https://en.wikipedia.org/wiki/Apollo_11",
                  "name": "Apollo 11"
+             }
+         }
+     },
+     "star" : {
+         "checkpoints": 6,
+         "difficulty": "bonus",
+         "time": 1200.0,
+         "data": {
+             "0": {
+                 "url": "https://en.wikipedia.org/wiki/Star",
+                 "name": "Star"
+             },
+             "1": {
+                 "url": "https://en.wikipedia.org/wiki/Classroom",
+                 "name": "Classroom"
+             },
+             "2": {
+                 "url": "https://en.wikipedia.org/wiki/Notebook",
+                 "name": "Notebook"
+             },
+             "3": {
+                 "url": "https://en.wikipedia.org/wiki/Smile",
+                 "name": "Smile"
+             },
+             "4": {
+                 "url": "https://en.wikipedia.org/wiki/Letter_(message)",
+                 "name": "Letter"
+             },
+             "5": {
+                 "url": "https://en.wikipedia.org/wiki/Love",
+                 "name": "Love"
              }
          }
      }

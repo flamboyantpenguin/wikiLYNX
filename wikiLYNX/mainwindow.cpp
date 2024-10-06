@@ -92,6 +92,9 @@ void MainWindow::initAction() {
     if (url.toString() == wUrl) {
         this->missionAccomplished();
     }
+    else {
+        ui->statusbar->showMessage("Next Checkpoint: "+wUrl);
+    }
 }
 
 
@@ -105,6 +108,7 @@ int MainWindow::missionAccomplished() {
 
     if (prg == 100) {
         timer->stop();
+        ui->statusbar->showMessage("You won!!!");
         *dontKillMe = 1;
         QString c = QString::number(endTime-cCount);
         std::ofstream out("./gData/logs/"+instance+"/report.txt", std::ios_base::app);

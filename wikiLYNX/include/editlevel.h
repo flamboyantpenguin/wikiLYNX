@@ -44,6 +44,7 @@ private slots:
     void editChkPoint();
     void addLevel();
     void removeLevel();
+    void setEditStatus();
 
 };
 

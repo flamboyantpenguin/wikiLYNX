@@ -6,6 +6,9 @@ editChk::editChk(QWidget *parent) :
     ui(new Ui::editChk)
 {
     ui->setupUi(this);
+    ui->table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
+    ui->table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
+    ui->table->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
     connect(ui->addButton, &QPushButton::clicked, this, &editChk::addChk);
     connect(ui->removeButton, &QPushButton::clicked, this, &editChk::removeChk);
     connect(ui->closeButton, &QPushButton::clicked, this, &editChk::close);

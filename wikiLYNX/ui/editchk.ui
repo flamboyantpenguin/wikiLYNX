@@ -55,11 +55,23 @@
    <property name="geometry">
     <rect>
      <x>10</x>
-     <y>60</y>
+     <y>100</y>
      <width>741</width>
-     <height>301</height>
+     <height>261</height>
     </rect>
    </property>
+   <property name="showDropIndicator" stdset="0">
+    <bool>true</bool>
+   </property>
+   <property name="sortingEnabled">
+    <bool>true</bool>
+   </property>
+   <attribute name="horizontalHeaderVisible">
+    <bool>true</bool>
+   </attribute>
+   <attribute name="verticalHeaderVisible">
+    <bool>false</bool>
+   </attribute>
    <column>
     <property name="text">
      <string>Checkpoint</string>
@@ -80,7 +92,7 @@
    <property name="geometry">
     <rect>
      <x>760</x>
-     <y>60</y>
+     <y>100</y>
      <width>80</width>
      <height>24</height>
     </rect>
@@ -93,13 +105,26 @@
    <property name="geometry">
     <rect>
      <x>760</x>
-     <y>100</y>
+     <y>140</y>
      <width>80</width>
      <height>24</height>
     </rect>
    </property>
    <property name="text">
     <string>Remove</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>60</y>
+     <width>741</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Edit checkpoints of level code: </string>
    </property>
   </widget>
  </widget>

@@ -19,7 +19,9 @@ welcomeUI::welcomeUI(QDialog *parent)
     connect(ui->cLogsButton, &QPushButton::clicked, this, &welcomeUI::clearLogs);
     connect(ui->sLogsButton, &QPushButton::clicked, this, &welcomeUI::showLogs);
     connect(ui->editLevelButton, &QPushButton::clicked, this, &welcomeUI::addCustom);
+    connect(ui->refreshButton, &QPushButton::clicked, this, &welcomeUI::loadSettings);
     connect(ui->refreshButton, &QPushButton::clicked, this, &welcomeUI::updateUI);
+
 
 }
 
@@ -107,6 +109,7 @@ void welcomeUI::updateUI() {
 
     ui->passcodeInput->clear();
     ui->passcodeInput->addItems(data.keys());
+    ui->passcodeInput->removeItem(ui->passcodeInput->findText("debug"));
 }
 
 

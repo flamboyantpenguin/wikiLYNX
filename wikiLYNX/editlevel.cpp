@@ -8,13 +8,16 @@ editLevel::editLevel(QWidget *parent) :
     ui(new Ui::editLevel)
 {
     ui->setupUi(this);
+    ui->editButton->setEnabled(false);
     ui->table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     ui->table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
     ui->table->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
-    connect(ui->closeButton, &QPushButton::clicked, this, &editLevel::close);
     connect(ui->addButton, &QPushButton::clicked, this, &editLevel::addLevel);
     connect(ui->removeButton, &QPushButton::clicked, this, &editLevel::removeLevel);
     connect(ui->editButton, &QPushButton::clicked, this, &editLevel::editChkPoint);
+    connect(ui->table, &QTableWidget::clicked, this, &editLevel::setEditStatus);
+    connect(ui->closeButton, &QPushButton::clicked, this, &editLevel::close);
+
 
 }
 
@@ -82,7 +85,12 @@ void editLevel::editChkPoint() {
     editChkDialog.initialise(&uData, cde);
     editChkDialog.show();
 
+}
 
+
+void editLevel::setEditStatus() {
+    if (ui->table->item(ui->table->currentIndex().row(), 1) && !ui->table->item(ui->table->currentIndex().row(), 1)->text().isEmpty())
+        ui->editButton->setEnabled(true);
 }
 
 
