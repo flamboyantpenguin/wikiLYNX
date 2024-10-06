@@ -21,6 +21,8 @@ welcomeUI::welcomeUI(QDialog *parent)
     connect(ui->editLevelButton, &QPushButton::clicked, this, &welcomeUI::addCustom);
     connect(ui->refreshButton, &QPushButton::clicked, this, &welcomeUI::loadSettings);
     connect(ui->refreshButton, &QPushButton::clicked, this, &welcomeUI::updateUI);
+    //ui->initButton->setFocusPolicy(Qt::StrongFocus);
+    ui->initButton->setFocus();
 
 
 }
@@ -203,6 +205,7 @@ void welcomeUI::showLogs() {
 
 void welcomeUI::clearLogs() {
     QDir("./gData/logs").removeRecursively();
+    QMessageBox::information(this, "wikiLYNX", "Logs cleared successfully!", QMessageBox::Ok);
 }
 
 

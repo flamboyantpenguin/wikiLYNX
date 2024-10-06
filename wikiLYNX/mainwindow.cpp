@@ -91,6 +91,7 @@ void MainWindow::initAction() {
     auto wUrl = this->cfg[QString::number((this->chk)+1)].toObject()["url"].toString();
     if (url.toString() == wUrl) {
         this->missionAccomplished();
+        ui->statusbar->showMessage("Next Checkpoint: "+this->cfg[QString::number((this->chk)+1)].toObject()["url"].toString());
     }
     else {
         ui->statusbar->showMessage("Next Checkpoint: "+wUrl);
