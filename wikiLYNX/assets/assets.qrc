@@ -12,6 +12,9 @@
         <file>fonts/NotoSans-VariableFont_wdth,wght.ttf</file>
         <file>images/wikiLYNX_logo.png</file>
         <file>images/DAWN.png</file>
+        <file>info/license.txt</file>
+        <file>info/wikipedia.txt</file>
+        <file>images/refresh.png</file>
     </qresource>
     <qresource prefix="/cfg">
         <file>gameData.json</file>

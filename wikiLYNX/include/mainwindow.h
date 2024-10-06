@@ -31,7 +31,7 @@ class MainWindow : public QMainWindow
     std::string domain;
     int endTime = 0;
     int cCount = 0;
-    int countdown = 0;
+    float countdown = 0;
     std::string aTime;
     std::string cTime;
     QTimer *timer = new QTimer(this);

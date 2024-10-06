@@ -1,17 +1,20 @@
 {"info" : {
-    "domain": "https://en.wikipedia.org",
-    "allowOtherDomains": 0,
-    "levels": 3},
+    "allowReference": 0,
+    "totemOfUndying": 0
+    },
     "data" : {
      "flyingduck" : {
          "checkpoints": 5,
-         "time": 600,
+         "difficulty": "easy",
+         "time": 600.0,
          "data": {
              "0": {
-                 "url": "https://en.wikipedia.org/wiki/7_Up"
+                 "url": "https://en.wikipedia.org/wiki/7_Up",
+                 "name": "7 UP"
              },
              "1": {
-                 "url": "https://en.wikipedia.org/wiki/United_States"
+                 "url": "https://en.wikipedia.org/wiki/United_States",
+                 "name": "United States"
              },
              "2": {
                  "url": "https://en.wikipedia.org/wiki/Federal_government_of_the_United_States",
@@ -29,7 +32,7 @@
      },
      "pingus" : {
          "checkpoints": 4,
-         "time": 600,
+         "time": 600.0,
          "data": {
              "0": {
                  "url": "https://en.wikipedia.org/wiki/Shah_Rukh_Khan",
@@ -51,7 +54,7 @@
      },
      "cattomosfet!" : {
          "checkpoints": 5,
-         "time": 900,
+         "time": 900.0,
          "data": {
              "0": {
                  "url": "https://en.wikipedia.org/wiki/Paper",
@@ -77,7 +80,7 @@
      },
      "greenapple" : {
          "checkpoints": 3,
-         "time": 720,
+         "time": 720.0,
          "data": {
              "0": {
                  "url": "https://en.wikipedia.org/wiki/Nintendo",
@@ -95,7 +98,7 @@
      },
      "debug" : {
          "checkpoints": 3,
-         "time": 10,
+         "time": 10.0,
          "data": {
              "0": {
                  "url": "https://en.wikipedia.org/wiki/Pencil",
@@ -113,7 +116,7 @@
      },
      "youseewhatyouthinkyousee" : {
          "checkpoints": 2,
-         "time": 1200,
+         "time": 1200.0,
          "data": {
              "0": {
                  "url": "https://en.wikipedia.org/wiki/Cat",
@@ -127,7 +130,7 @@
      },
      "maytheforcebewithyou" : {
          "checkpoints": 2,
-         "time": 1200,
+         "time": 1200.0,
          "data": {
              "0": {
                  "url": "https://en.wikipedia.org/wiki/MrBeast",
@@ -141,7 +144,7 @@
      },
      "toinfinityandbeyond" : {
          "checkpoints": 2,
-         "time": 1200,
+         "time": 1200.0,
          "data": {
              "0": {
                  "url": "https://en.wikipedia.org/wiki/Mickey_Mouse",
