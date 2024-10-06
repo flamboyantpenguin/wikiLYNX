@@ -114,7 +114,7 @@
              },
              "2": {
                  "url": "https://en.wikipedia.org/wiki/Cat",
-                 "name": "Paper"
+                 "name": "Cat"
              }
          }
      },
@@ -129,14 +129,14 @@
              },
              "1": {
                  "url": "https://en.wikipedia.org/wiki/MOSFET",
-                 "name": "Mosfet"
+                 "name": "MOSFET"
              }
          }
      },
      "maytheforcebewithyou" : {
-         "checkpoints": 2,
-         "difficulty": "hard",
-         "time": 1200.0,
+         "checkpoints": 3,
+         "difficulty": "medium",
+         "time": 800.0,
          "data": {
              "0": {
                  "url": "https://en.wikipedia.org/wiki/MrBeast",
@@ -145,11 +145,15 @@
              "1": {
                  "url": "https://en.wikipedia.org/wiki/Studio_Ghibli",
                  "name": "Studio Ghiblo"
+             },
+             "2": {
+                 "url": "https://en.wikipedia.org/wiki/Light",
+                 "name": "Light"
              }
          }
      },
      "toinfinityandbeyond" : {
-         "checkpoints": 2,
+         "checkpoints": 3,
          "difficulty": "hard",
          "time": 1200.0,
          "data": {
@@ -160,6 +164,10 @@
              "1": {
                  "url": "https://en.wikipedia.org/wiki/Apollo_11",
                  "name": "Apollo 11"
+             },
+             "2": {
+                 "url": "https://en.wikipedia.org/wiki/Mandalorians",
+                 "name": "Mandalorians"
              }
          }
      },
