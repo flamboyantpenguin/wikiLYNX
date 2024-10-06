@@ -33,7 +33,7 @@ void viewcheckpoint::initialise(QJsonObject *data, int *c, int *cStatus) {
     ui->table->horizontalHeader()->setSectionResizeMode(2, QHeaderView::ResizeToContents);
 
     for (int i = 0; i < *c; ++i) {
-        QString url = (*data)[QString::number(i)].toObject()["url"].toString();
+        QString url = (*data)[QString::number(i)].toObject()["name"].toString();
         QTableWidgetItem* n = new QTableWidgetItem();
         QTableWidgetItem* item = new QTableWidgetItem();
         n->setText(QString::number(i));

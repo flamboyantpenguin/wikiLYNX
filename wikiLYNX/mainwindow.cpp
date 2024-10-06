@@ -13,8 +13,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
 
-    instance = "instance"+QDateTime::currentDateTime().toString("yyyyMMddHHmmss").toStdString();
-    fs::create_directories("./gData/"+instance);
+
 
     ui->clock->setAlignment(Qt::AlignCenter);
     ui->counter->setAlignment(Qt::AlignCenter);
@@ -33,14 +32,15 @@ MainWindow::~MainWindow()
 }
 
 
-int MainWindow::initialise(QJsonObject *cfgData, int *c, QString allowedDomain, int ald) {
+int MainWindow::initialise(QJsonObject *cfgData, int *c, QString allowedDomain, int aRD) {
 
-
+    instance = "instance"+QDateTime::currentDateTime().toString("yyyyMMddHHmmss").toStdString();
+    fs::create_directories("./gData/logs/"+instance);
     aTime = QTime::currentTime().toString("hh:mm:ss.zzz").toStdString();
     this->cfg = (*cfgData)["data"].toObject();
     this->tChk = (*cfgData)["checkpoints"].toInt();
     this->endTime = (*cfgData)["time"].toInt();
-    this->alD = ald;
+    this->alD = aRD;
     this->cCount = this->endTime;
     this->domain = allowedDomain.toStdString();
     countdown = this->endTime;
@@ -50,18 +50,18 @@ int MainWindow::initialise(QJsonObject *cfgData, int *c, QString allowedDomain, 
     ui->progressBar->setValue(0);
     QApplication::processEvents();
 
-    timer->start(1000);
+    timer->start(100);
     return 0;
 }
 
 
 void MainWindow::updateCountdown()
 {
-    countdown--;
+    countdown = countdown - 0.1;
     ui->clock->setText(QTime::currentTime().toString("hh:mm:ss"));
-    ui->counter->setText(QString::number(countdown));
+    ui->counter->setText(QString::number(countdown, 'f', 2));
 
-    if (countdown == 0) {
+    if (countdown < 0.099) {
         this->missionFailed();
     }
 
@@ -71,7 +71,7 @@ void MainWindow::updateCountdown()
 void MainWindow::initAction() {
 
     auto url = ui->field->page()->url();
-    std::ofstream out("./gData/"+instance+"/log.txt", std::ios_base::app);
+    std::ofstream out("./gData/logs/"+instance+"/log.txt", std::ios_base::app);
     out << QDateTime::currentDateTime().toString("yyyy/MM/dd|hh:mm:ss.zzz").toStdString()+">>\t";
     out << url.toString().toStdString()+"\n";
     out.close();
@@ -92,6 +92,9 @@ void MainWindow::initAction() {
     if (url.toString() == wUrl) {
         this->missionAccomplished();
     }
+    else {
+        ui->statusbar->showMessage("Next Checkpoint: "+wUrl);
+    }
 }
 
 
@@ -105,15 +108,16 @@ int MainWindow::missionAccomplished() {
 
     if (prg == 100) {
         timer->stop();
+        ui->statusbar->showMessage("You won!!!");
         *dontKillMe = 1;
         QString c = QString::number(endTime-cCount);
-        std::ofstream out("./gData/"+instance+"/report.txt", std::ios_base::app);
+        std::ofstream out("./gData/logs/"+instance+"/report.txt", std::ios_base::app);
         out << "Status: Passed\n";
         out << "Time Taken: "+c.toStdString()+"\n";
         out << "Start Time: "+aTime+"\n";
         out << "CheckPoint Time: "+cTime+"\n";
         out.close();
-        ui->field->printToPdf("./gData/"+QString::fromStdString(instance)+"/fPage.pdf");
+        ui->field->printToPdf("./gData/logs/"+QString::fromStdString(instance)+"/fPage.pdf");
         congratsView.initialise(c, QString::fromStdString(this->aTime), QString::fromStdString(cTime), instance, &(this->chk), 1);
         QMessageBox::information(this, "wikiLYNX", "You Won!!!", QMessageBox::Ok);
         congratsView.show();
@@ -128,10 +132,11 @@ int MainWindow::missionAccomplished() {
 
 int MainWindow::missionFailed(){
 
+    timer->stop();
     *dontKillMe = 1;
     QString c = QString::number(endTime-cCount);
-    ui->field->printToPdf("./gData/"+QString::fromStdString(instance)+"/fPage.pdf");
-    std::ofstream out("./gData/"+instance+"/report.txt", std::ios_base::app);
+    ui->field->printToPdf("./gData/logs/"+QString::fromStdString(instance)+"/fPage.pdf");
+    std::ofstream out("./gData/logs/"+instance+"/report.txt", std::ios_base::app);
     out << "Status: Failed\n";
     out << "Time Taken: "+c.toStdString()+"\n";
     out << "CheckPointTime Time: "+cTime+"\n";
@@ -146,7 +151,7 @@ int MainWindow::missionFailed(){
 
 void MainWindow::launchLogs() {
 
-    QFile f("./gData/"+QString::fromStdString(instance)+"/log.txt");
+    QFile f("./gData/logs/"+QString::fromStdString(instance)+"/log.txt");
     f.open(QIODevice::ReadOnly);
     auto logs = QString(f.readAll());
     f.close();
@@ -169,8 +174,8 @@ void MainWindow::endGame() {
     timer->stop();
     *dontKillMe = 1;
     QString c = QString::number(endTime-cCount);
-    ui->field->printToPdf("./gData/"+QString::fromStdString(instance)+"/fPage.pdf");
-    std::ofstream out("./gData/"+instance+"/report.txt", std::ios_base::app);
+    ui->field->printToPdf("./gData/logs/"+QString::fromStdString(instance)+"/fPage.pdf");
+    std::ofstream out("./gData/logs/"+instance+"/report.txt", std::ios_base::app);
     out << "Status: Game Ended Abruptly\n";
     out << "Time Taken: "+c.toStdString()+"\n";
     out << "Start Time: "+aTime+"\n";

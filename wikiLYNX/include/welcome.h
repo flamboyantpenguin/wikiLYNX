@@ -1,15 +1,22 @@
 #include <json/value.h>
+#include <sys/stat.h>
 #include <fstream>
+#include <filesystem>
 #include <QJsonDocument>
 #include <QFile>
 #include <QJsonObject>
 #include <QResource>
 #include <QMessageBox>
-#include <QDesktopServices>
 #include <QString>
+#include <QTextStream>
+#include <QDesktopServices>
+#include <QDir>
 
+
+#include "help.h"
+#include "about.h"
+#include "editlevel.h"
 #include "mainwindow.h"
-
 
 namespace Ui {
 class welcomeDialog;
@@ -23,21 +30,35 @@ class welcomeUI : public QDialog
 public:
     explicit welcomeUI(QDialog *parent = nullptr);
 
+    int initialise(int*);
+
     int *dontKillParse0;
-    QJsonObject data, instance;
+    int aRD = 0;
+    int *totemofUndying;
+    QJsonObject data, cfg;
     //Json::Value cfg;
 
 
 private slots:
+    void showAbout();
+    void showLogs();
+    void clearLogs();
     int startGame();
+    void updateUI();
+    void loadSettings();
+    void updateSettings();
+    void saveSettings();
+    void checkCustom();
+    void addCustom();
+    void showLevelInfo();
     void showRules();
-    void showTerms();
-    void editSettings();
-    void launchFeedback();
 
 
 private:
     MainWindow game;
+    help helpDialog;
+    about aboutDialog;
+    editLevel editDialog;
     Ui::welcomeDialog *ui;
 
 };

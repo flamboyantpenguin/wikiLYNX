@@ -37,6 +37,11 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         viewhistory.cpp include/viewhistory.h ui/viewhistory.ui
         viewcheckpoint.cpp include/viewcheckpoint.h ui/viewcheckpoint.ui
         ui/congrats.ui congrats.cpp include/congrats.h
+        ui/about.ui about.cpp include/about.h
+        ui/help.ui help.cpp include/help.h
+        ui/terms.ui terms.cpp include/terms.h
+        ui/editlevel.ui editlevel.cpp include/editlevel.h
+        ui/editchk.ui editchk.cpp include/editchk.h
 
     )
 # Define target properties for Android with Qt 6 as:
