@@ -14,24 +14,16 @@ find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets WebEngineWidgets)
 
 if (MSVC)
-    find_package(jsoncpp CONFIG REQUIRED)
+    #find_package(jsoncpp CONFIG REQUIRED)
     set(app_icon_resource_windows "${CMAKE_CURRENT_SOURCE_DIR}/assets/logo.rc")
     #qt_add_executable(photosurfaceexample main.cpp ${app_icon_resource_windows})
 endif (MSVC)
 
 set(PROJECT_SOURCES
         main.cpp
-        mainwindow.cpp
-        include/mainwindow.h
-        ui/mainwindow.ui
-)
-
-if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
-    qt_add_executable(wikiLYNX
-        MANUAL_FINALIZATION
-        ${PROJECT_SOURCES}
-        ${app_icon_resource_windows}
-
+        gamewindow.cpp
+        include/gamewindow.h
+        ui/gamewindow.ui
         assets/assets.qrc
         ui/welcome.ui include/welcome.h welcome.cpp
         viewhistory.cpp include/viewhistory.h ui/viewhistory.ui
@@ -42,7 +34,14 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         ui/terms.ui terms.cpp include/terms.h
         ui/editlevel.ui editlevel.cpp include/editlevel.h
         ui/editchk.ui editchk.cpp include/editchk.h
+        ui/viewstats.ui viewstats.cpp include/viewstats.h
+)
 
+if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
+    qt_add_executable(wikiLYNX
+        MANUAL_FINALIZATION
+        ${PROJECT_SOURCES}
+        ${app_icon_resource_windows}
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET wikiLYNX APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
@@ -63,13 +62,7 @@ else()
 endif()
 
 
-if (MSVC)
-    target_link_libraries(wikiLYNX PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt::WebEngineWidgets jsoncpp_lib)
-endif (MSVC)
-
-if (UNIX)
-    target_link_libraries(wikiLYNX PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt::WebEngineWidgets)
-endif(UNIX)
+target_link_libraries(wikiLYNX PRIVATE Qt${QT_VERSION_MAJOR}::Widgets Qt::WebEngineWidgets)
 
 
 # Qt for iOS sets MACOSX_BUNDLE_GUI_IDENTIFIER automatically since Qt 6.1.

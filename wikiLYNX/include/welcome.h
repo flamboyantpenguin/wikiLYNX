@@ -1,4 +1,3 @@
-#include <json/value.h>
 #include <sys/stat.h>
 #include <fstream>
 #include <filesystem>
@@ -12,15 +11,16 @@
 #include <QDesktopServices>
 #include <QDir>
 
-
 #include "help.h"
 #include "about.h"
 #include "editlevel.h"
-#include "mainwindow.h"
+#include "gamewindow.h"
+#include "viewstats.h"
 
 namespace Ui {
 class welcomeDialog;
 }
+
 
 class welcomeUI : public QDialog
 {
@@ -40,6 +40,7 @@ public:
 
 
 private slots:
+    void showStats();
     void showAbout();
     void showLogs();
     void clearLogs();
@@ -55,10 +56,11 @@ private slots:
 
 
 private:
-    MainWindow game;
+    GameWindow game;
     help helpDialog;
     about aboutDialog;
     editLevel editDialog;
+    viewStats statsDialog;
     Ui::welcomeDialog *ui;
 
 };

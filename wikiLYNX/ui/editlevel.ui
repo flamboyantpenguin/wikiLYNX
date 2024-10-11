@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>editLevel</class>
  <widget class="QDialog" name="editLevel">
+  <property name="windowModality">
+   <enum>Qt::WindowModality::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,7 +19,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Edit Custom Levels</string>
   </property>
   <widget class="QPushButton" name="closeButton">
    <property name="geometry">

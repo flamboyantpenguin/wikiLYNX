@@ -1,5 +1,5 @@
-#ifndef MAINWINDOW_H
-#define MAINWINDOW_H
+#ifndef GAMEWINDOW_H
+#define GAMEWINDOW_H
 
 #include <QMainWindow>
 #include <filesystem>
@@ -8,6 +8,7 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QTimer>
+#include <QString>
 
 #include "congrats.h"
 #include "viewhistory.h"
@@ -16,11 +17,11 @@
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
-class MainWindow;
+class GameWindow;
 }
 QT_END_NAMESPACE
 
-class MainWindow : public QMainWindow
+class GameWindow : public QMainWindow
 {
     Q_OBJECT
 
@@ -28,26 +29,24 @@ class MainWindow : public QMainWindow
     int chk = 0;
     int alD = 1;
     int tChk = 0;
-    std::string domain;
-    int endTime = 0;
-    int cCount = 0;
+    float endTime = 0;
+    float cCount = 0;
     float countdown = 0;
-    std::string aTime;
-    std::string cTime;
+    QString aTime, instance, domain;
     QTimer *timer = new QTimer(this);
-    std::string instance;
 
 public:
-    MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+    GameWindow(QWidget *parent = nullptr);
+    ~GameWindow();
 
     QJsonObject cfg;
     int *dontKillMe;
-    int initialise(QJsonObject*, int*, QString, int);
+    int initialise(QJsonObject*, int*, QString, int, QString, QString);
 
 
 private:
-    Ui::MainWindow *ui;
+    QString gamer, level;
+    Ui::GameWindow *ui;
     congrats congratsView;
     viewHistory historyView;
     viewcheckpoint checkpointView;
@@ -63,4 +62,4 @@ private slots:
 
 };
 
-#endif // MAINWINDOW_H
+#endif // GAMEWINDOW_H
