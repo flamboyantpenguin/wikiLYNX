@@ -252,6 +252,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <property name="text">
       <string>INIT!</string>
      </property>
+     <property name="default">
+      <bool>true</bool>
+     </property>
     </widget>
     <widget class="QLabel" name="label_2">
      <property name="geometry">
