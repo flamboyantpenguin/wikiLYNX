@@ -1,4 +1,3 @@
-#include "include/mainwindow.h"
 #include "include/welcome.h"
 #include "ui/ui_welcome.h"
 
@@ -12,52 +11,62 @@
 #include <QNetworkAccessManager>
 #include <QNetworkReply>
 #include <QDesktopServices>
+#include <QProcess>
+#include <QSysInfo>
 
 
-int totem = 0;
-int dontKill = 1;
-QApplication *temp;
-std::string lVersion("1.1.0");
-std::string version("1.1.0");
-
-
+void loadFonts();
 void checkUpdate();
 void downloadUpdate();
 void onFocusChanged(QWidget *oldFocus, QWidget *newFocus);
 
 
+int totem = 0;
+int dontKill = 1;
+QApplication *app;
+std::string lVersion("1.2.5");
+std::string version("1.2.5");
+
+
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    temp = &a;
+    app = &a;
 
-    QFontDatabase::addApplicationFont(":/base/fonts/CourierPrime-Bold.ttf");
-    QFontDatabase::addApplicationFont(":/base/fonts/CourierPrime-Regular.ttf");
-    QFontDatabase::addApplicationFont(":/base/fonts/NotoSans-VariableFont_wdth,wght.ttf");
-    QFontDatabase::addApplicationFont(":/base/fonts/NotoSans-Regular.ttf");
-
-
-    //MainWindow game;
-
+    loadFonts();
     welcomeUI dialog;
-    QObject::connect(&a, &QApplication::focusChanged, onFocusChanged);
-    //dialog.setWindowFlag(Qt::FramelessWindowHint);
+    QObject::connect(app, &QApplication::focusChanged, onFocusChanged);
+
+    if (QProcess::execute("ping", QStringList() << "-c 1" << "wikipedia.org")) {
+        QString msg("It seems your system cannot access wikipedia.org. Please check your internet and try again!");
+        QMessageBox::critical(nullptr, "wikiLYNX", msg, QMessageBox::Ok);
+        return 1;
+    }
 
     checkUpdate();
     dialog.dontKillParse0 = &dontKill;
     dialog.initialise(&totem);
     dialog.show();
 
-    return a.exec();
+    return app->exec();
+}
+
+
+void loadFonts() {
+    QFontDatabase::addApplicationFont(":/base/fonts/CourierPrime-Bold.ttf");
+    QFontDatabase::addApplicationFont(":/base/fonts/CourierPrime-Regular.ttf");
+    QFontDatabase::addApplicationFont(":/base/fonts/NotoSans-VariableFont_wdth,wght.ttf");
+    QFontDatabase::addApplicationFont(":/base/fonts/NotoSans-Regular.ttf");
 }
 
 
 void checkUpdate() {
+
     QNetworkAccessManager manager;
-    QUrl url("https://archive.pcland.co.in/DAWN/Projects/wikiLYNX/.info/version.txt");
+    QUrl url("https://repo.pcland.co.in/QtOnline/wikiLYNX/.info/version.txt");
 
     QNetworkReply *reply = manager.get(QNetworkRequest(url));
-    temp->connect(reply, &QNetworkReply::finished, [&reply]() {
+    app->connect(reply, &QNetworkReply::finished, [&reply]() {
         if (reply->error() == QNetworkReply::NoError) {
             QByteArray data = reply->readAll();
             lVersion = QString::fromLocal8Bit(data).toStdString();
@@ -69,7 +78,7 @@ void checkUpdate() {
         reply->deleteLater();
     });
 
-    if (strcmp(version.c_str(), lVersion.c_str()) > 0) {
+    if (strcmp(lVersion.c_str(), version.c_str()) > 0) {
         downloadUpdate();
     }
 }
@@ -77,18 +86,24 @@ void checkUpdate() {
 
 void downloadUpdate() {
 
-    QMessageBox::StandardButton reply = QMessageBox::question(nullptr, "wikiLYNX", "New Update Available. Do you want to download?", QMessageBox::Yes | QMessageBox::No);
+    if (QSysInfo::productType() != "windows") {
+        QString msg("Check your package manager for the latest version");
+        QMessageBox::information(nullptr, "wikiLYNX", msg, QMessageBox::Ok);
+        return;
+    }
+    QMessageBox::StandardButton reply = QMessageBox::question(nullptr, "wikiLYNX", "New Update Available. Do you want to update?", QMessageBox::Yes | QMessageBox::No);
 
     if (reply == QMessageBox::Yes) {
-        QDesktopServices::openUrl(QUrl("https://archive.pcland.co.in/DAWN/Projects/wikiLYNX"));
+        QDesktopServices::openUrl(QUrl::fromLocalFile("./maintenancetool.exe"));
     }
 }
+
 
 void onFocusChanged(QWidget *oldFocus, QWidget* newFocus) {
     if(newFocus == nullptr && !dontKill && !totem) {
         //QMessageBox::critical(nullptr, "wikiLYNX", "Game Rule Violiation! You're not allowed to switch windows during game session", QMessageBox::Ok);
         //std::ofstream out("./gData/"+instance+"/report.txt", std::ios_base::app);
-        //out << "Status: Policy Violation\n";
+        qDebug() << "Game Ended Abruptly due to Game Policy Violation";
         //out.close();
         QApplication::quit();
         return;

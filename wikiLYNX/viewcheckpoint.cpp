@@ -21,12 +21,9 @@ viewcheckpoint::~viewcheckpoint()
 void viewcheckpoint::initialise(QJsonObject *data, int *c, int *cStatus) {
 
     ui->table->clear();
-    //*(dontKillMe) = 1;
     ui->table->setRowCount(*c);
     ui->table->setColumnCount(3);
     ui->table->setColumnWidth(1, 100);
-    auto header = ui->table->horizontalHeader();
-    //header.setSectionResizeMode(1, QHeaderView.ResizeToContents);
 
     ui->table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
     ui->table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);

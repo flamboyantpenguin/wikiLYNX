@@ -1,8 +1,6 @@
 #include "include/welcome.h"
 #include "ui/ui_welcome.h"
 
-//#include "./ui_mainwindow.h"
-
 namespace fs = std::filesystem;
 
 
@@ -21,9 +19,8 @@ welcomeUI::welcomeUI(QDialog *parent)
     connect(ui->editLevelButton, &QPushButton::clicked, this, &welcomeUI::addCustom);
     connect(ui->refreshButton, &QPushButton::clicked, this, &welcomeUI::loadSettings);
     connect(ui->refreshButton, &QPushButton::clicked, this, &welcomeUI::updateUI);
-    //ui->initButton->setFocusPolicy(Qt::StrongFocus);
+    connect(ui->statsButton, &QPushButton::clicked, this, &welcomeUI::showStats);
     ui->initButton->setFocus();
-
 
 }
 
@@ -32,7 +29,6 @@ int welcomeUI::initialise(int *totem) {
 
     fs::create_directories("./gData");
     this->totemofUndying = totem;
-
 
     loadSettings();
     updateUI();
@@ -64,9 +60,8 @@ int welcomeUI::startGame() {
 
     this->grabKeyboard();
     this->hide();
-    //auto domain = cfg["domain"].toString();
     auto temp = data[passcode].toObject();
-    game.initialise(&temp, dontKillParse0, "https://en.wikipedia.org", this->aRD);
+    game.initialise(&temp, dontKillParse0, "https://en.wikipedia.org", this->aRD, ui->playerName->text(), passcode);
     *dontKillParse0 = 0;
     game.showFullScreen();
     QApplication::processEvents();
@@ -78,9 +73,6 @@ int welcomeUI::startGame() {
 void welcomeUI::loadSettings() {
 
     checkCustom();
-
-    const char* file = "./gData/gData.json";
-    struct stat sb;
 
     QFile cFile(":/cfg/gameData.json");
     ui->editLevelButton->setEnabled(true);
@@ -147,7 +139,6 @@ void welcomeUI::saveSettings() {
     document.setObject(nContent);
 
     QFile::remove("./gData/gData.json");
-    QByteArray bytes = document.toJson( QJsonDocument::Indented );
     QFile file("./gData/gData.json");
     file.open(QIODevice::ReadWrite);
     file.write(document.toJson());
@@ -174,6 +165,8 @@ void welcomeUI::checkCustom() {
 
         temp.insert("info", this->cfg);
         document.setObject(temp);
+
+        QFile::remove("./gData/gData.json");
 
         QByteArray bytes = document.toJson( QJsonDocument::Indented );
         QFile file("./gData/gData.json");
@@ -208,6 +201,11 @@ void welcomeUI::clearLogs() {
     QMessageBox::information(this, "wikiLYNX", "Logs cleared successfully!", QMessageBox::Ok);
 }
 
+
+void welcomeUI::showStats() {
+
+    statsDialog.show();
+}
 
 void welcomeUI::showAbout() {
     aboutDialog.show();

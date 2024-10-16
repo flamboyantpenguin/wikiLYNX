@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>editLevel</class>
  <widget class="QDialog" name="editLevel">
+  <property name="windowModality">
+   <enum>Qt::WindowModality::WindowModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -16,7 +19,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>Dialog</string>
+   <string>Edit Custom Levels</string>
   </property>
   <widget class="QPushButton" name="closeButton">
    <property name="geometry">
@@ -30,7 +33,7 @@
    <property name="font">
     <font>
      <family>Noto Sans</family>
-     <pointsize>8</pointsize>
+     <pointsize>10</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -145,6 +148,53 @@
    </property>
    <property name="text">
     <string>Edit your own custom levels here</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="loadButton">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>280</y>
+     <width>80</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="statusTip">
+    <string>Load Levels from local file</string>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+   <property name="text">
+    <string>Load</string>
+   </property>
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="default">
+    <bool>false</bool>
+   </property>
+   <property name="flat">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="exportButton">
+   <property name="geometry">
+    <rect>
+     <x>760</x>
+     <y>310</y>
+     <width>80</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="statusTip">
+    <string>Export levels to file</string>
+   </property>
+   <property name="whatsThis">
+    <string/>
+   </property>
+   <property name="text">
+    <string>Export</string>
    </property>
   </widget>
  </widget>
