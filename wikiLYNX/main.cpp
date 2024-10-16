@@ -17,6 +17,7 @@
 
 void loadFonts();
 void checkUpdate();
+int checkInternet();
 void downloadUpdate();
 void onFocusChanged(QWidget *oldFocus, QWidget *newFocus);
 
@@ -37,7 +38,7 @@ int main(int argc, char *argv[])
     welcomeUI dialog;
     QObject::connect(app, &QApplication::focusChanged, onFocusChanged);
 
-    if (QProcess::execute("ping", QStringList() << "-c 1" << "wikipedia.org")) {
+    if (checkInternet()) {
         QString msg("It seems your system cannot access wikipedia.org. Please check your internet and try again!");
         QMessageBox::critical(nullptr, "wikiLYNX", msg, QMessageBox::Ok);
         return 1;
@@ -49,6 +50,18 @@ int main(int argc, char *argv[])
     dialog.show();
 
     return app->exec();
+}
+
+
+int checkInternet() {
+#ifdef Q_OS_WIN
+
+    return QProcess::execute("ping", QStringList() << "wikipedia.org");  // Replace with wikipedia.org if preferred
+
+#else
+    return QProcess::execute("ping", QStringList() << "-c" << "1" << "wikipedia.org"); // Replace with wikipedia.org if preferred
+
+#endif
 }
 
 
