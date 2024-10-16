@@ -16,6 +16,8 @@ editLevel::editLevel(QWidget *parent) :
     connect(ui->removeButton, &QPushButton::clicked, this, &editLevel::removeLevel);
     connect(ui->editButton, &QPushButton::clicked, this, &editLevel::editChkPoint);
     connect(ui->table, &QTableWidget::clicked, this, &editLevel::setEditStatus);
+    connect(ui->loadButton, &QPushButton::clicked, this, &editLevel::importLevels);
+    connect(ui->exportButton, &QPushButton::clicked, this, &editLevel::exportLevels);
     connect(ui->closeButton, &QPushButton::clicked, this, &editLevel::close);
 
 
@@ -29,8 +31,6 @@ editLevel::~editLevel()
 
 void editLevel::initialise() {
 
-    QJsonDocument document;
-
     QFile lFile("./gData/gData.json");
     if (lFile.isOpen())
         lFile.close();
@@ -38,8 +38,17 @@ void editLevel::initialise() {
     auto temp = QJsonDocument::fromJson(lFile.readAll()).object();
     lFile.close();
 
-    data = temp["data"].toObject();
     this->cfg = temp["info"].toObject();
+    this->updateTable(temp["data"].toObject());
+    this->iData = temp["data"].toObject();
+
+    QStringList keys = this->iData.keys();
+    for (const QString& key : keys) this->uData.insert(key, this->iData[key].toObject()["data"].toObject());
+
+}
+
+
+void editLevel::updateTable(QJsonObject data) {
 
 
     auto l = data.keys();
@@ -61,7 +70,6 @@ void editLevel::initialise() {
         ui->table->setItem(i, 3, difficulty);
 
     }
-
 }
 
 
@@ -80,7 +88,7 @@ void editLevel::editChkPoint() {
     auto t = ui->table->currentIndex();
     auto cde = ui->table->item(t.row(), 0)->text();
     //QMessageBox::information(this, "wikiLYNX", QString::number(t.row()), QMessageBox::Ok);
-    this->uData.insert(cde, data[cde].toObject()["data"].toObject());
+    //this->uData.insert(cde, data[cde].toObject()["data"].toObject());
     //QMessageBox::information(this, "wikiLYNX", ui->table->item(t.row(), 0)->text(), QMessageBox::Ok);
     editChkDialog.initialise(&uData, cde);
     editChkDialog.show();
@@ -94,7 +102,7 @@ void editLevel::setEditStatus() {
 }
 
 
-void editLevel::saveData() {
+void editLevel::saveData(QString fname, int mode) {
 
     QJsonObject nData;
 
@@ -115,19 +123,63 @@ void editLevel::saveData() {
     QJsonDocument document;
     QJsonObject temp;
 
-    temp.insert("info", this->cfg);
+    if (!mode) temp.insert("info", this->cfg);
     temp.insert("data", nData);
     document.setObject(temp);
 
-    QFile::remove("./gData/gData.json");
+    QFile::remove(fname);
 
     QByteArray bytes = document.toJson( QJsonDocument::Indented );
-    QFile file("./gData/gData.json");
-    if (file.isOpen())
-        file.close();
+    QFile file(fname);
+    if (file.isOpen()) file.close();
     file.open(QIODevice::ReadWrite);
     QTextStream iStream(&file);
     iStream << bytes;
     file.flush();
     file.close();
+}
+
+
+void editLevel::importLevels() {
+
+    QFileDialog dialog(this);
+    QString filename;
+    dialog.setFileMode(QFileDialog::ExistingFile);
+    dialog.setAcceptMode(QFileDialog::AcceptOpen);
+    dialog.setNameFilter(tr("JSON Files (*.json)"));
+    if (dialog.exec()) {
+        filename = dialog.selectedFiles()[0];
+    }
+
+    QFile lFile(filename);
+    if (lFile.isOpen()) lFile.close();
+    lFile.open(QIODevice::ReadOnly);
+    auto temp = QJsonDocument::fromJson(lFile.readAll()).object();
+    lFile.close();
+
+    QVariantMap map = this->iData.toVariantMap();
+    map.insert(temp["data"].toObject().toVariantMap());
+    this->iData = QJsonObject::fromVariantMap(map);
+    this->updateTable(this->iData);
+
+    QStringList keys = this->iData.keys();
+    for (const QString& key : keys) this->uData.insert(key, this->iData[key].toObject()["data"].toObject());
+
+}
+
+
+void editLevel::exportLevels() {
+
+
+    QFileDialog dialog(this);
+    QString filename;
+    dialog.setFileMode(QFileDialog::AnyFile);
+    dialog.setAcceptMode(QFileDialog::AcceptSave);
+    dialog.selectFile("export.json");
+    dialog.setNameFilter(tr("JSON Files (*.json)"));
+    if (dialog.exec()) {
+        filename = dialog.selectedFiles()[0];
+    }
+    //if (filename.isEmpty()) return
+    this->saveData(filename, 1);
 }

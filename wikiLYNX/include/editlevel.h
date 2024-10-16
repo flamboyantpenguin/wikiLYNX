@@ -7,6 +7,7 @@
 #include <QString>
 #include <QStringList>
 #include <QFile>
+#include <QFileDialog>
 
 #include "editchk.h"
 
@@ -22,10 +23,11 @@ public:
     explicit editLevel(QWidget *parent = nullptr);
     ~editLevel();
     //std::map<QString, QJsonObject> uData;
-    QJsonObject cfg, data, uData;
-    void saveData();
+    QJsonObject cfg, iData, uData;
+    void saveData(QString fname = "./gData/gData.json", int mode = 0);
     //void collectData();
     void initialise();
+    void updateTable(QJsonObject);
 
 
 protected:
@@ -41,9 +43,11 @@ private:
 
 
 private slots:
-    void editChkPoint();
     void addLevel();
     void removeLevel();
+    void importLevels();
+    void exportLevels();
+    void editChkPoint();
     void setEditStatus();
 
 };

@@ -2,7 +2,12 @@
 #define CONGRATS_H
 
 #include <QFile>
+#include <iomanip>
 #include <QDialog>
+#include <fstream>
+#include <QJsonObject>
+#include <QJsonDocument>
+#include <QDesktopServices>
 
 #include "viewhistory.h"
 #include "viewcheckpoint.h"
@@ -23,19 +28,23 @@ public:
 
     //int chk;
     //int tChk;
-    int *dontKillMe;
-    std::string instanceName;
-    void initialise(QString, QString, QString, std::string, int*, int);
-
+    int chk;
+    void initialise(QString, QString, QString, QString, QString, QString, QString, int);
 
 private:
     viewHistory hView;
     viewcheckpoint cView;
     Ui::congrats *ui;
+    QJsonObject data;
+    void genReport();
+    void updateStats();
+    QString instanceName, startTime, endTime, gameStatus, playerName, timeTaken, level;
+
 
 private slots:
     void viewhistory();
-    void viewCheckPoints();
+    void launchFeedBack();
+
 };
 
 #endif // CONGRATS_H
