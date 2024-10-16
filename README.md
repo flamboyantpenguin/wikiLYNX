@@ -34,7 +34,37 @@ wikiLYNX is available as a binary package for Debian and RPM. The package is bui
 | [Fedora (RPM)](https://github.com/flamboyantpenguin/wikiLYNX/releases/latest/download/wikiLYNX_1.2.0-5_amd64.rpm)     |      ☑️      | 38 or above             |  amd64              |
 | [Arch Linux (AUR)](https://aur.archlinux.org/packages/wikilynx)                                                       |      ☑️      | Built from source (AUR) |  any                |
 
+#### Ubuntu (Debian)
 
+Download deb from [here](https://github.com/flamboyantpenguin/wikiLYNX/releases/latest/download/wikiLYNX_1.2.0-5_amd64.deb).
+
+To install, open it with Software in GNOME or Discover in KDE or any other software manager. To install using `apt` in cli, run the command 
+
+```bash
+sudo apt install ./wikiLYNX_1.2.0-5_amd64.deb
+```
+
+wikiLYNX will be soon available on for Ubuntu as a ppa and for Debian as a private repository. 
+
+#### Fedora (RPM) 
+
+Download rpm from [here](https://github.com/flamboyantpenguin/wikiLYNX/releases/latest/download/wikiLYNX_1.2.0-5_amd64.rpm).
+
+To install it, open it with a support package manager or run the command 
+
+```bash
+sudo dnf install ./wikiLYNX_1.2.0-5_amd64.rpm
+```
+
+#### Arch Linux (AUR)
+
+Install using `yay` or any other `AUR` helper. 
+
+##### yay
+
+```bash
+yay -S wikilynx
+```
 
 ### macOS
 
