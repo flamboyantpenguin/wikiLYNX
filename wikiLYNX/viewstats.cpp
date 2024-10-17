@@ -19,6 +19,7 @@ viewStats::~viewStats()
 
 int viewStats::initialise() {
 
+    ui->levelSelect->clear();
     QFile statFile("./gData/.stat");
     statFile.open(QIODevice::ReadOnly);
     this->data = QJsonDocument::fromJson(statFile.readAll()).object();
@@ -34,14 +35,7 @@ void viewStats::loadData() {
 
     QJsonObject leaderBoard = this->data.value(level).toObject();
 
-
-    //ui->table->clear();
-    //*(dontKillMe) = 1;
     ui->table->setRowCount(leaderBoard.count());
-    //auto header = ui->table->horizontalHeader();
-
-    //ui->table->horizontalHeader()->setSectionResizeMode(0, QHeaderView::ResizeToContents);
-    //ui->table->horizontalHeader()->setSectionResizeMode(1, QHeaderView::ResizeToContents);
 
     int i = 0;
     QStringList keys = leaderBoard.keys();
@@ -53,7 +47,6 @@ void viewStats::loadData() {
         ui->table->setItem(i, 0, timeTaken);
         ui->table->setItem(i, 1, playerName);
         i++;
-        //qDebug() << key << ": " << value;
     }
 
     ui->table->sortByColumn(ui->table->columnAt(0), Qt::AscendingOrder);

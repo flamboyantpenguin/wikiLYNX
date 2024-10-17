@@ -39,15 +39,15 @@ public:
     GameWindow(QWidget *parent = nullptr);
     ~GameWindow();
 
+    congrats congratsView;
+
     QJsonObject cfg;
     int *dontKillMe;
     int initialise(QJsonObject*, int*, QString, int, QString, QString);
 
-
 private:
     QString gamer, level;
     Ui::GameWindow *ui;
-    congrats congratsView;
     viewHistory historyView;
     viewcheckpoint checkpointView;
 

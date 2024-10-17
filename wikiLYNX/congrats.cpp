@@ -10,6 +10,7 @@ congrats::congrats(QWidget *parent) :
     connect(ui->closeButton, SIGNAL(clicked()), this, SLOT(close()));
     connect(ui->feedBackButton, &QPushButton::clicked, this, &congrats::launchFeedBack);
     connect(ui->viewHistory, SIGNAL(clicked()), this, SLOT(viewhistory()));
+    connect(ui->viewStatsButton, &QPushButton::clicked, this, &congrats::showStats);
 }
 
 congrats::~congrats()
@@ -38,11 +39,11 @@ void congrats::initialise(QString tTaken, QString sTime, QString eTime, QString 
     ui->endTime->setText(endTime);
     ui->chkCleared->setText(QString::number(chk));
 
-    if (gameStatus != "Passed") {
+    if (this->gameStatus == "Failed") {
         ui->mainLabel->setText(QString("Mission Failed"));
         ui->message->setText(QString("Oops. Seems you couldn't complete the challenge in time. Try again!"));
     }
-    else {
+    else if (this->gameStatus == "Aborted") {
         ui->mainLabel->setText(QString("Mission Aborted"));
         ui->message->setText(QString("Game ended abruptly."));
     }
@@ -86,10 +87,15 @@ void congrats::updateStats() {
     if (this->gameStatus != "Passed")
         return;
 
+    //QFile statFile("./gData/.stat");
+    //statFile.open(QIODevice::ReadOnly);
+    //auto initialData = QJsonDocument::fromJson(statFile.readAll()).object();
+    //statFile.close();
+
     QFile statFile("./gData/.stat");
     statFile.open(QIODevice::ReadOnly);
-    this->data = QJsonDocument::fromJson(statFile.readAll()).object();
-    this->data = data[this->level].toObject();
+    auto iData = QJsonDocument::fromJson(statFile.readAll()).object();
+    this->data = iData[this->level].toObject();
     statFile.close();
     if (this->data.keys().count() < 10) {
         if (!this->data.contains(this->timeTaken)) this->data[this->timeTaken] = this->playerName;
@@ -104,9 +110,8 @@ void congrats::updateStats() {
     }
 
     QJsonDocument document;
-    QJsonObject temp;
-    temp[this->level] = this->data;
-    document.setObject(temp);
+    iData[this->level] = this->data;
+    document.setObject(iData);
 
     QFile::remove("./gData/.stat");
     QFile file("./gData/.stat");
@@ -115,4 +120,10 @@ void congrats::updateStats() {
     file.flush();
     file.close();
 
+}
+
+void congrats::showStats() {
+
+    statsDialog.initialise();
+    statsDialog.show();
 }

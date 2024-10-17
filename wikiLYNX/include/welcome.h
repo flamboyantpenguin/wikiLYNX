@@ -13,9 +13,11 @@
 
 #include "help.h"
 #include "about.h"
+#include "congrats.h"
 #include "editlevel.h"
-#include "gamewindow.h"
 #include "viewstats.h"
+#include "gamewindow.h"
+
 
 namespace Ui {
 class welcomeDialog;
@@ -40,6 +42,7 @@ public:
 
 
 private slots:
+    void reset();
     void showStats();
     void showAbout();
     void showLogs();

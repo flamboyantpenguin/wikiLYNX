@@ -20,6 +20,7 @@ welcomeUI::welcomeUI(QDialog *parent)
     connect(ui->refreshButton, &QPushButton::clicked, this, &welcomeUI::loadSettings);
     connect(ui->refreshButton, &QPushButton::clicked, this, &welcomeUI::updateUI);
     connect(ui->statsButton, &QPushButton::clicked, this, &welcomeUI::showStats);
+    connect(&this->game.congratsView, &congrats::closed, this, &welcomeUI::reset);
     ui->initButton->setFocus();
 
 }
@@ -67,6 +68,14 @@ int welcomeUI::startGame() {
     QApplication::processEvents();
     return 0;
 
+}
+
+
+void welcomeUI::reset() {
+
+    this->show();
+    this->releaseKeyboard();
+    *dontKillParse0 = 1;
 }
 
 
