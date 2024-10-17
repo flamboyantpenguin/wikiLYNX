@@ -30,7 +30,7 @@
    <property name="font">
     <font>
      <family>Noto Sans</family>
-     <pointsize>8</pointsize>
+     <pointsize>10</pointsize>
      <bold>false</bold>
     </font>
    </property>
@@ -234,6 +234,19 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="text">
     <string>Feedback</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="viewStatsButton">
+   <property name="geometry">
+    <rect>
+     <x>460</x>
+     <y>340</y>
+     <width>91</width>
+     <height>24</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Leaderboard</string>
    </property>
   </widget>
  </widget>

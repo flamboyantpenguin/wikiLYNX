@@ -9,8 +9,10 @@
 #include <QJsonDocument>
 #include <QDesktopServices>
 
+#include "viewstats.h"
 #include "viewhistory.h"
 #include "viewcheckpoint.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -34,16 +36,27 @@ public:
 private:
     viewHistory hView;
     viewcheckpoint cView;
+    viewStats statsDialog;
     Ui::congrats *ui;
     QJsonObject data;
     void genReport();
     void updateStats();
     QString instanceName, startTime, endTime, gameStatus, playerName, timeTaken, level;
 
+protected:
+
+    void closeEvent(QCloseEvent *event) override {
+        emit closed();
+    }
+
 
 private slots:
+    void showStats();
     void viewhistory();
     void launchFeedBack();
+
+signals:
+    void closed();
 
 };
 

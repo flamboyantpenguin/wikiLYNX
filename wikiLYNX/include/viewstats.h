@@ -15,12 +15,12 @@ class viewStats : public QDialog
     Q_OBJECT
 
 public:
+    int initialise();
     explicit viewStats(QWidget *parent = nullptr);
     ~viewStats();
 
 private:
     QJsonObject data;
-    int initialise();
     Ui::viewStats *ui;
 
 private slots:

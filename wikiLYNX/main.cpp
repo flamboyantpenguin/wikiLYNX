@@ -118,7 +118,9 @@ void onFocusChanged(QWidget *oldFocus, QWidget* newFocus) {
         //std::ofstream out("./gData/"+instance+"/report.txt", std::ios_base::app);
         qDebug() << "Game Ended Abruptly due to Game Policy Violation";
         //out.close();
+        //app->quit();
         QApplication::quit();
+        QMessageBox::critical(nullptr, "wikiLYNX", "Game Rule Violiation! You're not allowed to switch windows during game session", QMessageBox::Ok);
         return;
     }
 }
