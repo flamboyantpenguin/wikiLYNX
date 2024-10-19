@@ -61,6 +61,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Noto Sans'; font-size:10pt; font-weight:400; font-style:normal;&quot; bgcolor=&quot;#000000&quot;&gt;
 &lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;img src=&quot;:/base/images/wikiLYNX_logo.png&quot; width=&quot;100&quot; height=&quot;60&quot; /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
+   <property name="textInteractionFlags">
+    <set>Qt::TextInteractionFlag::NoTextInteraction</set>
+   </property>
    <property name="openLinks">
     <bool>true</bool>
    </property>
@@ -136,6 +139,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    <property name="cursor">
     <cursorShape>WhatsThisCursor</cursorShape>
    </property>
+   <property name="toolTip">
+    <string>Learn how to play</string>
+   </property>
    <property name="text">
     <string>Help</string>
    </property>
@@ -151,6 +157,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
    </property>
    <property name="cursor">
     <cursorShape>WhatsThisCursor</cursorShape>
+   </property>
+   <property name="toolTip">
+    <string>About wikiLYNX</string>
    </property>
    <property name="text">
     <string>About</string>
@@ -227,6 +236,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <height>21</height>
       </rect>
      </property>
+     <property name="acceptDrops">
+      <bool>false</bool>
+     </property>
+     <property name="toolTip">
+      <string>Select Level</string>
+     </property>
      <property name="editable">
       <bool>true</bool>
      </property>
@@ -248,6 +263,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <width>81</width>
        <height>31</height>
       </rect>
+     </property>
+     <property name="toolTip">
+      <string>Start Game</string>
      </property>
      <property name="text">
       <string>INIT!</string>
@@ -278,6 +296,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <height>21</height>
       </rect>
      </property>
+     <property name="toolTip">
+      <string>Current Level difficulty</string>
+     </property>
      <property name="text">
       <string/>
      </property>
@@ -303,6 +324,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <width>221</width>
        <height>21</height>
       </rect>
+     </property>
+     <property name="toolTip">
+      <string>Number of checkpoints</string>
      </property>
      <property name="text">
       <string/>
@@ -347,6 +371,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
        <height>21</height>
       </rect>
      </property>
+     <property name="toolTip">
+      <string>Enter your name</string>
+     </property>
      <property name="inputMask">
       <string/>
      </property>
@@ -385,7 +412,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </rect>
      </property>
      <property name="text">
-      <string>Allow other sites (Access to reference links) </string>
+      <string>Allow other sites outside Wikipedia (Access to reference links) </string>
      </property>
     </widget>
     <widget class="QCheckBox" name="killToggle">
@@ -405,10 +432,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <property name="geometry">
       <rect>
        <x>420</x>
-       <y>140</y>
+       <y>133</y>
        <width>80</width>
-       <height>24</height>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="toolTip">
+      <string>Clear Logs</string>
      </property>
      <property name="text">
       <string>Clear Logs</string>
@@ -418,10 +448,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <property name="geometry">
       <rect>
        <x>330</x>
-       <y>140</y>
+       <y>133</y>
        <width>80</width>
-       <height>24</height>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="toolTip">
+      <string>Show Logs folder</string>
      </property>
      <property name="text">
       <string>Show Logs</string>
@@ -431,10 +464,13 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <property name="geometry">
       <rect>
        <x>240</x>
-       <y>140</y>
+       <y>133</y>
        <width>80</width>
-       <height>24</height>
+       <height>31</height>
       </rect>
+     </property>
+     <property name="toolTip">
+      <string>Add your own custom levels</string>
      </property>
      <property name="text">
       <string>Edit Levels</string>
@@ -450,6 +486,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <width>61</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>View Leaderboard</string>
    </property>
    <property name="text">
     <string>Stats</string>

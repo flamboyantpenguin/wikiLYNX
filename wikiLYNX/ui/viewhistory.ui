@@ -3,7 +3,7 @@
  <class>viewHistory</class>
  <widget class="QDialog" name="viewHistory">
   <property name="windowModality">
-   <enum>Qt::NonModal</enum>
+   <enum>Qt::WindowModality::NonModal</enum>
   </property>
   <property name="geometry">
    <rect>
@@ -50,6 +50,9 @@
    <property name="text">
     <string>Close</string>
    </property>
+   <property name="default">
+    <bool>true</bool>
+   </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
@@ -67,7 +70,7 @@
     </font>
    </property>
    <property name="text">
-    <string>View Logs</string>
+    <string>Logs</string>
    </property>
   </widget>
  </widget>

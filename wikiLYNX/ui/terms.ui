@@ -30,8 +30,14 @@
      <height>24</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Close this Dialog</string>
+   </property>
    <property name="text">
     <string>Close</string>
+   </property>
+   <property name="default">
+    <bool>true</bool>
    </property>
   </widget>
   <widget class="QTextBrowser" name="logo">
@@ -80,7 +86,7 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <string>Terms</string>
    </property>
   </widget>
-  <widget class="QTextBrowser" name="mainView">
+  <widget class="QTabWidget" name="MainView">
    <property name="geometry">
     <rect>
      <x>10</x>
@@ -89,6 +95,51 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <height>301</height>
     </rect>
    </property>
+   <property name="currentIndex">
+    <number>0</number>
+   </property>
+   <widget class="QWidget" name="tab1">
+    <attribute name="title">
+     <string>License</string>
+    </attribute>
+    <widget class="QTextBrowser" name="licenseView">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>811</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::InputMethodHint::ImhNone</set>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextBrowserInteraction|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab2">
+    <attribute name="title">
+     <string>Copying</string>
+    </attribute>
+    <widget class="QTextBrowser" name="copyingView">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>811</width>
+       <height>251</height>
+      </rect>
+     </property>
+     <property name="inputMethodHints">
+      <set>Qt::InputMethodHint::ImhNone</set>
+     </property>
+     <property name="textInteractionFlags">
+      <set>Qt::TextInteractionFlag::LinksAccessibleByKeyboard|Qt::TextInteractionFlag::LinksAccessibleByMouse|Qt::TextInteractionFlag::TextBrowserInteraction|Qt::TextInteractionFlag::TextSelectableByKeyboard|Qt::TextInteractionFlag::TextSelectableByMouse</set>
+     </property>
+    </widget>
+   </widget>
   </widget>
  </widget>
  <resources/>

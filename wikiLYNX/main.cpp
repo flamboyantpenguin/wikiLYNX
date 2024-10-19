@@ -25,8 +25,8 @@ void onFocusChanged(QWidget *oldFocus, QWidget *newFocus);
 int totem = 0;
 int dontKill = 1;
 QApplication *app;
-std::string lVersion("1.2.5");
-std::string version("1.2.5");
+std::string lVersion("1.2.6-0");
+std::string version("1.2.6-0");
 
 
 int main(int argc, char *argv[])
@@ -120,7 +120,7 @@ void onFocusChanged(QWidget *oldFocus, QWidget* newFocus) {
         //out.close();
         //app->quit();
         QApplication::quit();
-        QMessageBox::critical(nullptr, "wikiLYNX", "Game Rule Violiation! You're not allowed to switch windows during game session", QMessageBox::Ok);
+        QMessageBox::critical(nullptr, "wikiLYNX", "Game Rule Violation! You're not allowed to switch windows during game session", QMessageBox::Ok);
         return;
     }
 }

@@ -20,7 +20,7 @@ welcomeUI::welcomeUI(QDialog *parent)
     connect(ui->refreshButton, &QPushButton::clicked, this, &welcomeUI::loadSettings);
     connect(ui->refreshButton, &QPushButton::clicked, this, &welcomeUI::updateUI);
     connect(ui->statsButton, &QPushButton::clicked, this, &welcomeUI::showStats);
-    connect(&this->game.congratsView, &congrats::closed, this, &welcomeUI::reset);
+
     ui->initButton->setFocus();
 
 }
@@ -59,12 +59,14 @@ int welcomeUI::startGame() {
         return 1;
     }
 
+    this->game = new GameWindow;
+    connect(&(this->game->congratsView), &congrats::closed, this, &welcomeUI::reset);
     this->grabKeyboard();
     this->hide();
     auto temp = data[passcode].toObject();
-    game.initialise(&temp, dontKillParse0, "https://en.wikipedia.org", this->aRD, ui->playerName->text(), passcode);
+    game->initialise(&temp, dontKillParse0, "https://en.wikipedia.org", this->aRD, ui->playerName->text(), passcode);
     *dontKillParse0 = 0;
-    game.showFullScreen();
+    game->showFullScreen();
     QApplication::processEvents();
     return 0;
 
@@ -98,6 +100,7 @@ void welcomeUI::loadSettings() {
     this->data = QJsonObject::fromVariantMap(d);
     sFile.flush();
     sFile.close();
+    cFile.close();
 
 }
 
