@@ -117,6 +117,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <bold>false</bold>
          </font>
         </property>
+        <property name="toolTip">
+         <string>Current Time</string>
+        </property>
         <property name="whatsThis">
          <string>Current System Time</string>
         </property>
@@ -146,6 +149,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <bold>true</bold>
          </font>
         </property>
+        <property name="toolTip">
+         <string>Time Remaining</string>
+        </property>
+        <property name="statusTip">
+         <string/>
+        </property>
         <property name="text">
          <string>Counter</string>
         </property>
@@ -162,6 +171,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="acceptDrops">
+         <bool>false</bool>
+        </property>
+        <property name="toolTip">
+         <string>Game Progress</string>
+        </property>
         <property name="value">
          <number>24</number>
         </property>
@@ -172,6 +187,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
       </item>
       <item>
        <widget class="QPushButton" name="viewChkButton">
+        <property name="toolTip">
+         <string>View Checkpoints</string>
+        </property>
+        <property name="statusTip">
+         <string/>
+        </property>
         <property name="text">
          <string>Checkpoints</string>
         </property>
@@ -185,6 +206,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="toolTip">
+         <string>View Logs</string>
+        </property>
         <property name="text">
          <string>History</string>
         </property>
@@ -197,6 +221,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
           <horstretch>0</horstretch>
           <verstretch>0</verstretch>
          </sizepolicy>
+        </property>
+        <property name="toolTip">
+         <string>Exit Game</string>
         </property>
         <property name="text">
          <string>Exit</string>

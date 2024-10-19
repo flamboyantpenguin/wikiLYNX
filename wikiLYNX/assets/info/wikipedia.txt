@@ -1,5 +1,0 @@
-This application uses data from Wikipedia, a free online encyclopedia. Wikipedia's content is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License (CC BY-SA 3.0).
-
-Attribution:
-
-Wikipedia: https://www.wikipedia.org/

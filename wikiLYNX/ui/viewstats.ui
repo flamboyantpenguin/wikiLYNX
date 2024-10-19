@@ -25,6 +25,9 @@
      <height>26</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Close this Dialog</string>
+   </property>
    <property name="text">
     <string>Close</string>
    </property>
@@ -93,14 +96,35 @@
   <widget class="QComboBox" name="levelSelect">
    <property name="geometry">
     <rect>
-     <x>90</x>
+     <x>320</x>
      <y>100</y>
-     <width>121</width>
+     <width>211</width>
      <height>21</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Select Level</string>
+   </property>
    <property name="placeholderText">
     <string>Level</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>90</x>
+     <y>100</y>
+     <width>231</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="font">
+    <font>
+     <family>Courier Prime</family>
+    </font>
+   </property>
+   <property name="text">
+    <string>The honoured 12 of the level</string>
    </property>
   </widget>
  </widget>

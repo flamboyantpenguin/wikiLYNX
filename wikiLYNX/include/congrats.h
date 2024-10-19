@@ -13,6 +13,8 @@
 #include "viewhistory.h"
 #include "viewcheckpoint.h"
 
+#define theGrandPlayers 12
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
