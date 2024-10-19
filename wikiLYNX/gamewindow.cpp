@@ -38,6 +38,7 @@ int GameWindow::initialise(QJsonObject *cfgData, int *dontKillMeParse, QString a
     if (playerName.isEmpty()) this->gamer = "Blondie";
     else this->gamer = playerName;
 
+    this->chk = 0;
     this->cfg = (*cfgData)["data"].toObject();
     this->tChk = (*cfgData)["checkpoints"].toInt();
     this->endTime = (*cfgData)["time"].toDouble();

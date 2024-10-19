@@ -97,7 +97,7 @@ void congrats::updateStats() {
     auto iData = QJsonDocument::fromJson(statFile.readAll()).object();
     this->data = iData[this->level].toObject();
     statFile.close();
-    if (this->data.keys().count() < 10) {
+    if (this->data.keys().count() < theGrandPlayers) {
         if (!this->data.contains(this->timeTaken)) this->data[this->timeTaken] = this->playerName;
     }
 

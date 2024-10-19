@@ -59,8 +59,8 @@ private slots:
 
 
 private:
-    GameWindow game;
     help helpDialog;
+    GameWindow *game;
     about aboutDialog;
     editLevel editDialog;
     viewStats statsDialog;

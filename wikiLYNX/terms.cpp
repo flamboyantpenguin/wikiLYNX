@@ -8,19 +8,29 @@ terms::terms(QWidget *parent) :
 {
     ui->setupUi(this);
     connect(ui->closeButton, &QPushButton::clicked, this, &terms::close);
-    QFile f(":/base/info/wikipedia.txt");
-    f.open(QIODevice::ReadOnly);
-    auto terms = QString(f.readAll());
-    f.close();
-    QFile t(":/base/info/license.txt");
-    t.open(QIODevice::ReadOnly);
-    terms += "\n\n"+QString(t.readAll());
-    t.close();
-    ui->mainView->setText(terms);
+    this->initialise();
+
 }
 
 
 terms::~terms()
 {
     delete ui;
+}
+
+
+void terms::initialise() {
+
+    QFile f(":/base/info/LICENSE.txt");
+    f.open(QIODevice::ReadOnly);
+    auto license = QString(f.readAll());
+    f.close();
+    ui->licenseView->setText(license);
+
+    QFile c(":/base/info/COPYING.txt");
+    c.open(QIODevice::ReadOnly);
+    auto copying = QString(c.readAll());
+    c.close();
+    ui->copyingView->setText(copying);
+
 }

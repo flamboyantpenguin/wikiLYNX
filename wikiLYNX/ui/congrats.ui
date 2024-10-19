@@ -34,6 +34,9 @@
      <bold>false</bold>
     </font>
    </property>
+   <property name="toolTip">
+    <string>Close this Dialog</string>
+   </property>
    <property name="text">
     <string>Close</string>
    </property>
@@ -115,6 +118,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <height>31</height>
     </rect>
    </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;This denotes the time taken to play the game. If you were unable to finish the game in time, this denotes the time taken to reach the last checkpoint. &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+   </property>
    <property name="text">
     <string>time</string>
    </property>
@@ -163,9 +169,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <rect>
      <x>380</x>
      <y>190</y>
-     <width>181</width>
+     <width>431</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;System time when the game started &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="text">
     <string>starttime</string>
@@ -176,9 +185,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <rect>
      <x>380</x>
      <y>230</y>
-     <width>181</width>
+     <width>431</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;System time when the game ended &lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="text">
     <string>endtime</string>
@@ -192,6 +204,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <width>91</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>View Logs</string>
    </property>
    <property name="text">
     <string>View History</string>
@@ -215,9 +230,12 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <rect>
      <x>380</x>
      <y>260</y>
-     <width>49</width>
+     <width>451</width>
      <height>16</height>
     </rect>
+   </property>
+   <property name="whatsThis">
+    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The number of Checkpoints you cleared&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
    </property>
    <property name="text">
     <string>chk</string>
@@ -232,6 +250,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <height>24</height>
     </rect>
    </property>
+   <property name="toolTip">
+    <string>Rate us!</string>
+   </property>
    <property name="text">
     <string>Feedback</string>
    </property>
@@ -244,6 +265,9 @@ li.checked::marker { content: &quot;\2612&quot;; }
      <width>91</width>
      <height>24</height>
     </rect>
+   </property>
+   <property name="toolTip">
+    <string>View Leaderboard</string>
    </property>
    <property name="text">
     <string>Leaderboard</string>

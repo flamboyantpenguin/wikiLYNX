@@ -17,6 +17,7 @@ public:
     ~terms();
 
 private:
+    void initialise();
     Ui::terms *ui;
 };
 
