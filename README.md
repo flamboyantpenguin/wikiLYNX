@@ -238,4 +238,5 @@ Last Updated: 20-10-2024
 Made by DAWN/ペンギン
 ```
 
-![DAWN](https://github.com/flamboyantpenguin)
+![DAWN](https://github.com/user-attachments/assets/e634151e-0178-4168-aca4-9664237d7ace)
+
