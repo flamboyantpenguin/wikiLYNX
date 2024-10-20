@@ -36,6 +36,12 @@
    <property name="editTriggers">
     <set>QAbstractItemView::EditTrigger::NoEditTriggers</set>
    </property>
+   <property name="selectionMode">
+    <enum>QAbstractItemView::SelectionMode::NoSelection</enum>
+   </property>
+   <property name="gridStyle">
+    <enum>Qt::PenStyle::DotLine</enum>
+   </property>
    <property name="rowCount">
     <number>5</number>
    </property>

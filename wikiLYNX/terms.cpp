@@ -33,4 +33,16 @@ void terms::initialise() {
     c.close();
     ui->copyingView->setText(copying);
 
+    QFile n(":/base/fonts/NotoSans_OFL.txt");
+    n.open(QIODevice::ReadOnly);
+    auto notoOFL = QString(n.readAll());
+    n.close();
+    ui->notoOFL->setText(notoOFL);
+
+    QFile cP(":/base/fonts/CourierPrime_OFL.txt");
+    cP.open(QIODevice::ReadOnly);
+    auto courierPrimeOFL = QString(cP.readAll());
+    cP.close();
+    ui->courierPrimeOFL->setText(courierPrimeOFL);
+
 }
