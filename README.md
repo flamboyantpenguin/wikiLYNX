@@ -55,7 +55,14 @@ To install, open it with Software in GNOME or Discover in KDE or any other softw
 sudo apt install ./wikilynx_1.2.6-0_amd64.deb
 ```
 
-wikiLYNX will be soon available for Debian as a private repository.
+You can also install by adding DAWN APT Repository
+
+```bash
+sudo sh -c "curl https://repo.pcland.co.in/.keys/dawn-pgp.public >> /usr/share/keyrings/dawn-pgp.public" 
+sudo sh -c "echo deb [arch=amd64 signed-by=/usr/share/keyrings/dawn-pgp.public] https://repo.pcland.co.in/apt stable main > /etc/apt/sources.list.d/dawn.list" 
+sudo apt update && sudo apt install wikilynx
+```
+
 
 #### Fedora (RPM)
 
@@ -67,7 +74,7 @@ To install it, open it with a support package manager or run the command =
 sudo dnf install ./wikilynx-1.2.6-0.fc40.x86_64.rpm
 ```
 
-You can also install by adding DAWN repository
+You can also install by adding DAWN RPM repository
 
 ```bash
 sudo dnf config-manager --add-repo https://repo.pcland.co.in/rpm/dawn.repo
