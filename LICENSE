@@ -1,3 +1,5 @@
+# wikiLYNX
+
 MIT License
 
 Copyright (c) 2024 Penguin
@@ -19,3 +21,20 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+## Third-Party Components: Wikipedia
+
+This application uses data from Wikipedia, a free online encyclopedia. Wikipedia's content is licensed under the Creative Commons Attribution-ShareAlike 3.0 Unported License (CC BY-SA 3.0).
+
+Attribution:
+
+Wikipedia: https://www.wikipedia.org/
+
+## Third-Party Components: Qt6 Framework
+
+This software uses the Qt6 framework, © The Qt Company Ltd. Licensed under the LGPL v3. See the COPYING file for the full license text.
+
+## Third-Part Components: CMake
+
+This project uses CMake, which is distributed under the BSD 3-Clause License.
+See https://cmake.org/licensing/ for details.
